@@ -84,112 +84,111 @@ Publications HAL, rangées par brique du calculateur.
 ## B. Ressources logicielles
 
 Dépôts de code rangés par **rôle dans le calculateur**, GitHub et GitLab
-confondus. La colonne étoiles donne un ordre de grandeur d'adoption.
+confondus.
 
 ### B.1 Estimer l'impact d'un modèle d'IA
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [mlco2/codecarbon](https://github.com/mlco2/codecarbon) | GitHub | 1910 | Émissions d'un calcul Python, entraînement comme inférence : kWh mesurés (RAPL/NVML) × intensité carbone régionale. Décorateur, sortie CSV, dashboard. La brique que tout le monde utilise. |
-| [mlco2/ecologits](https://github.com/mlco2/ecologits) | GitHub | 325 | **Impact d'un appel API LLM** sans accès à la machine : énergie, GWP, ADPe estimés depuis les tokens et la taille du modèle. Votre seule option quand vous ne mesurez pas. |
-| [saintslab/carbontracker](https://github.com/saintslab/carbontracker) | GitHub | 483 | Mesure **et prédit** l'énergie et le carbone d'un entraînement, par extrapolation dès les premières epochs. |
-| [ml-energy/zeus](https://github.com/ml-energy/zeus) | GitHub | 372 | Mesure **et optimise** l'énergie des applications d'IA (arbitrage énergie/temps via DVFS GPU). |
-| [Breakend/experiment-impact-tracker](https://github.com/Breakend/experiment-impact-tracker) | GitHub | 293 | Traçage d'expériences ML, avec génération d'un paragraphe d'impact pour publication. |
-| [mlco2/impact](https://github.com/mlco2/impact) | GitHub | 270 | ML CO2 Impact : calculateur web historique (Lacoste et al.), formule simple et pédagogique. |
-| [Helmholtz-AI-Energy/perun](https://github.com/Helmholtz-AI-Energy/perun) | GitHub | 94 | Énergie d'applications Python, orienté HPC / MPI multi-nœuds. |
-| [HewlettPackard/sustain-cluster](https://github.com/HewlettPackard/sustain-cluster) | GitHub | 74 | Environnement Gymnasium pour benchmarker l'ordonnancement durable de clusters IA. |
-| [huggingface/AIEnergyScore](https://github.com/huggingface/AIEnergyScore) | GitHub | 41 | **Notation comparable** de l'efficacité énergétique des modèles : méthodologie de benchmark standardisée. |
-| [Ren-Research/Making-AI-Less-Thirsty](https://github.com/Ren-Research/Making-AI-Less-Thirsty) | GitHub | 33 | **Empreinte eau de l'IA** : refroidissement et eau du mix électrique. La principale source sur cet axe. |
-| [ecs-lab/llm-inference-energy-benchmark](https://gitlab.com/ecs-lab/llm-inference-energy-benchmark) | GitLab | — | **Jeu de mesures** : puissance, traces et débit de 13 LLM (1,3B→9B) sur H100 / TensorRT-LLM. De quoi **calibrer et valider** un modèle analytique (papier *SweetSpot*, ICPE 2026). |
-| [inria/magnet/declearn/energy](https://gitlab.inria.fr/magnet/declearn/energy) | GitLab INRIA | — | Consommation d'un framework d'apprentissage fédéré. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [mlco2/codecarbon](https://github.com/mlco2/codecarbon) | GitHub | Émissions d'un calcul Python, entraînement comme inférence : kWh mesurés (RAPL/NVML) × intensité carbone régionale. Décorateur, sortie CSV, dashboard. La brique que tout le monde utilise. |
+| [mlco2/ecologits](https://github.com/mlco2/ecologits) | GitHub | **Impact d'un appel API LLM** sans accès à la machine : énergie, GWP, ADPe estimés depuis les tokens et la taille du modèle. Votre seule option quand vous ne mesurez pas. |
+| [saintslab/carbontracker](https://github.com/saintslab/carbontracker) | GitHub | Mesure **et prédit** l'énergie et le carbone d'un entraînement, par extrapolation dès les premières epochs. |
+| [ml-energy/zeus](https://github.com/ml-energy/zeus) | GitHub | Mesure **et optimise** l'énergie des applications d'IA (arbitrage énergie/temps via DVFS GPU). |
+| [Breakend/experiment-impact-tracker](https://github.com/Breakend/experiment-impact-tracker) | GitHub | Traçage d'expériences ML, avec génération d'un paragraphe d'impact pour publication. |
+| [mlco2/impact](https://github.com/mlco2/impact) | GitHub | ML CO2 Impact : calculateur web historique (Lacoste et al.), formule simple et pédagogique. |
+| [Helmholtz-AI-Energy/perun](https://github.com/Helmholtz-AI-Energy/perun) | GitHub | Énergie d'applications Python, orienté HPC / MPI multi-nœuds. |
+| [HewlettPackard/sustain-cluster](https://github.com/HewlettPackard/sustain-cluster) | GitHub | Environnement Gymnasium pour benchmarker l'ordonnancement durable de clusters IA. |
+| [huggingface/AIEnergyScore](https://github.com/huggingface/AIEnergyScore) | GitHub | **Notation comparable** de l'efficacité énergétique des modèles : méthodologie de benchmark standardisée. |
+| [Ren-Research/Making-AI-Less-Thirsty](https://github.com/Ren-Research/Making-AI-Less-Thirsty) | GitHub | **Empreinte eau de l'IA** : refroidissement et eau du mix électrique. La principale source sur cet axe. |
+| [ecs-lab/llm-inference-energy-benchmark](https://gitlab.com/ecs-lab/llm-inference-energy-benchmark) | GitLab | **Jeu de mesures** : puissance, traces et débit de 13 LLM (1,3B→9B) sur H100 / TensorRT-LLM. De quoi **calibrer et valider** un modèle analytique (papier *SweetSpot*, ICPE 2026). |
+| [inria/magnet/declearn/energy](https://gitlab.inria.fr/magnet/declearn/energy) | GitLab INRIA | Consommation d'un framework d'apprentissage fédéré. |
 
 ### B.2 Mesurer la consommation électrique
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [hubblo-org/scaphandre](https://github.com/hubblo-org/scaphandre) | GitHub | 1968 | Agent de métrologie énergétique (RAPL, cgroups, VM), exporteur Prometheus. Ce que déploient la plupart des équipes infra. |
-| [sustainable-computing-io/kepler](https://github.com/sustainable-computing-io/kepler) | GitHub | 1563 | Énergie par pod/conteneur/nœud **Kubernetes** (eBPF + modèles), exporteur Prometheus. |
-| [green-coding-solutions/green-metrics-tool](https://github.com/green-coding-solutions/green-metrics-tool) | GitHub | 254 | Banc de mesure complet : énergie et émissions d'un logiciel, timelines, intégration git, comparaison de versions. |
-| [powerapi-ng/powerapi](https://github.com/powerapi-ng/powerapi) | GitHub | 253 | Framework de construction de *software-defined power meters*. Voir [smartwatts-formula](https://github.com/powerapi-ng/smartwatts-formula) (modèle auto-adaptatif) et [pyJoules](https://github.com/powerapi-ng/pyJoules) (énergie d'un bloc de code). |
-| [joular/powerjoular](https://github.com/joular/powerjoular) | GitHub | 117 | Consommation **par processus**, multi-plateformes (RAPL + Nvidia). [joularjx](https://github.com/joular/joularjx) descend au niveau du code source Java. |
-| [tdurieux/EnergiBridge](https://github.com/tdurieux/EnergiBridge) | GitHub | 37 | Mesure multiplateforme (Linux/macOS/Windows, Intel/AMD/Apple Silicon), là où RAPL ne suffit pas. |
-| [kajalv/nvml-power](https://github.com/kajalv/nvml-power) | GitHub | 26 | Puissance GPU par polling NVML. La brique GPU minimale. |
-| [irit/sepia-pub/expetator](https://gitlab.irit.fr/sepia-pub/expetator) | GitLab IRIT | — | Campagnes de benchmarks HPC avec leviers DVFS et monitoring bas niveau (compteurs matériels, RAPL) sur Grid'5000. |
-| [sosy-lab/cpu-energy-meter](https://gitlab.com/sosy-lab/software/cpu-energy-meter) | GitLab | — | Énergie CPU Intel via RAPL. Petit, auditable. |
-| [inria/majay/energy-consumption-of-gpu-benchmarks](https://gitlab.inria.fr/majay/energy-consumption-of-gpu-benchmarks) | GitLab INRIA | — | Compare les outils de mesure de consommation GPU et tranche entre eux. |
-| [inria/mbelgaid/python-energy](https://gitlab.inria.fr/mbelgaid/python-energy) | GitLab INRIA | — | Énergie induite par les outils d'optimisation Python (transpileurs, JIT). |
-| [inria/delamare/tutoriel-mesure-energie-wid2](https://gitlab.inria.fr/delamare/tutoriel-mesure-energie-wid2) | GitLab INRIA | — | **Tutoriel** de mesure d'énergie. Point de départ pédagogique. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [hubblo-org/scaphandre](https://github.com/hubblo-org/scaphandre) | GitHub | Agent de métrologie énergétique (RAPL, cgroups, VM), exporteur Prometheus. Ce que déploient la plupart des équipes infra. |
+| [sustainable-computing-io/kepler](https://github.com/sustainable-computing-io/kepler) | GitHub | Énergie par pod/conteneur/nœud **Kubernetes** (eBPF + modèles), exporteur Prometheus. |
+| [green-coding-solutions/green-metrics-tool](https://github.com/green-coding-solutions/green-metrics-tool) | GitHub | Banc de mesure complet : énergie et émissions d'un logiciel, timelines, intégration git, comparaison de versions. |
+| [powerapi-ng/powerapi](https://github.com/powerapi-ng/powerapi) | GitHub | Framework de construction de *software-defined power meters*. Voir [smartwatts-formula](https://github.com/powerapi-ng/smartwatts-formula) (modèle auto-adaptatif) et [pyJoules](https://github.com/powerapi-ng/pyJoules) (énergie d'un bloc de code). |
+| [joular/powerjoular](https://github.com/joular/powerjoular) | GitHub | Consommation **par processus**, multi-plateformes (RAPL + Nvidia). [joularjx](https://github.com/joular/joularjx) descend au niveau du code source Java. |
+| [tdurieux/EnergiBridge](https://github.com/tdurieux/EnergiBridge) | GitHub | Mesure multiplateforme (Linux/macOS/Windows, Intel/AMD/Apple Silicon), là où RAPL ne suffit pas. |
+| [kajalv/nvml-power](https://github.com/kajalv/nvml-power) | GitHub | Puissance GPU par polling NVML. La brique GPU minimale. |
+| [irit/sepia-pub/expetator](https://gitlab.irit.fr/sepia-pub/expetator) | GitLab IRIT | Campagnes de benchmarks HPC avec leviers DVFS et monitoring bas niveau (compteurs matériels, RAPL) sur Grid'5000. |
+| [sosy-lab/cpu-energy-meter](https://gitlab.com/sosy-lab/software/cpu-energy-meter) | GitLab | Énergie CPU Intel via RAPL. Petit, auditable. |
+| [inria/majay/energy-consumption-of-gpu-benchmarks](https://gitlab.inria.fr/majay/energy-consumption-of-gpu-benchmarks) | GitLab INRIA | Compare les outils de mesure de consommation GPU et tranche entre eux. |
+| [inria/mbelgaid/python-energy](https://gitlab.inria.fr/mbelgaid/python-energy) | GitLab INRIA | Énergie induite par les outils d'optimisation Python (transpileurs, JIT). |
+| [inria/delamare/tutoriel-mesure-energie-wid2](https://gitlab.inria.fr/delamare/tutoriel-mesure-energie-wid2) | GitLab INRIA | **Tutoriel** de mesure d'énergie. Point de départ pédagogique. |
 
 ### B.3 Estimer les impacts de fabrication (ACV matérielle)
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [in2p3/impacts-hpc](https://gitlab.in2p3.fr/impacts-hpc/impacts-hpc) | GitLab IN2P3 | — | Librairie Python qui estime l'impact d'un *job* datacenter en GWP, ADPe et énergie primaire, et rend chaque résultat **explicable, sourcé et assorti de son incertitude**. Le modèle à copier. [Documentation](https://impacthpc-cc8227.pages.in2p3.fr/index.html) · [ontologie](https://gitlab.in2p3.fr/impacts-hpc/ontology-impactshpc) |
-| [Boavizta/environmental-footprint-data](https://github.com/Boavizta/environmental-footprint-data) | GitHub | 130 | Base ouverte des impacts environnementaux d'équipements, issue des fiches constructeurs. |
-| [Boavizta/boaviztapi](https://github.com/Boavizta/boaviztapi) | GitHub | 99 | **API des impacts de fabrication** (serveur, CPU, GPU, RAM, SSD) : GWP, ADPe, PE. Couvre l'*embodied* que CodeCarbon ignore. |
-| [cloud-carbon-footprint/cloud-carbon-coefficients](https://github.com/cloud-carbon-footprint/cloud-carbon-coefficients) | GitHub | 45 | Notebooks qui dérivent les coefficients énergie/carbone du cloud. Ils exposent **la méthode**, pas seulement le résultat. |
-| [in2p3/ecoinfo/ecodiag](https://gitlab.in2p3.fr/ecoinfo/ecodiag) | GitLab IN2P3 | — | Bilan carbone d'un parc IT par approche ACV matériel. Daté, mais le modèle se lit facilement. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [in2p3/impacts-hpc](https://gitlab.in2p3.fr/impacts-hpc/impacts-hpc) | GitLab IN2P3 | Librairie Python qui estime l'impact d'un *job* datacenter en GWP, ADPe et énergie primaire, et rend chaque résultat **explicable, sourcé et assorti de son incertitude**. Le modèle à copier. [Documentation](https://impacthpc-cc8227.pages.in2p3.fr/index.html) · [ontologie](https://gitlab.in2p3.fr/impacts-hpc/ontology-impactshpc) |
+| [Boavizta/environmental-footprint-data](https://github.com/Boavizta/environmental-footprint-data) | GitHub | Base ouverte des impacts environnementaux d'équipements, issue des fiches constructeurs. |
+| [Boavizta/boaviztapi](https://github.com/Boavizta/boaviztapi) | GitHub | **API des impacts de fabrication** (serveur, CPU, GPU, RAM, SSD) : GWP, ADPe, PE. Couvre l'*embodied* que CodeCarbon ignore. |
+| [cloud-carbon-footprint/cloud-carbon-coefficients](https://github.com/cloud-carbon-footprint/cloud-carbon-coefficients) | GitHub | Notebooks qui dérivent les coefficients énergie/carbone du cloud. Ils exposent **la méthode**, pas seulement le résultat. |
+| [in2p3/ecoinfo/ecodiag](https://gitlab.in2p3.fr/ecoinfo/ecodiag) | GitLab IN2P3 | Bilan carbone d'un parc IT par approche ACV matériel. Daté, mais le modèle se lit facilement. |
 
 ### B.4 Convertir en carbone : intensité électrique et cloud
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [electricitymaps/electricitymaps-contrib](https://github.com/electricitymaps/electricitymaps-contrib) | GitHub | 4032 | Parsers open source de l'**intensité carbone du réseau** mondial. Fournit le gCO₂e/kWh horaire et localisé. |
-| [cloud-carbon-footprint/cloud-carbon-footprint](https://github.com/cloud-carbon-footprint/cloud-carbon-footprint) | GitHub | 1050 | kWh + tCO₂e à partir des factures AWS/GCP/Azure. [Plugin Backstage](https://github.com/cloud-carbon-footprint/ccf-backstage-plugin) disponible. |
-| [Green-Software-Foundation/carbon-aware-sdk](https://github.com/Green-Software-Foundation/carbon-aware-sdk) | GitHub | 592 | SDK pour décaler ou placer un calcul selon l'intensité carbone. |
-| [Green-Software-Foundation/real-time-cloud](https://github.com/Green-Software-Foundation/real-time-cloud) | GitHub | 75 | Standards de données énergie/carbone temps réel pour les fournisseurs cloud. |
-| [GoogleCloudPlatform/region-picker](https://github.com/GoogleCloudPlatform/region-picker) | GitHub | 69 | Choix d'une région cloud arbitrant carbone, prix et latence. |
-| [Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC](https://github.com/Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC) | GitHub | 73 | Rapport énergie + carbone de ses jobs Slurm. Pendant HPC de Green Algorithms. |
-| [fledee/ecodynelec](https://gitlab.com/fledee/ecodynelec) | GitLab | — | Impacts de l'électricité européenne en **suivant les flux entre pays**, donc sur le mix réellement consommé. |
-| [elioth/dynco2](https://gitlab.com/elioth/dynco2) | GitLab | — | Forçage radiatif instantané d'une série d'émissions (modèle DynCO2), pour aller au-delà du gCO₂e. |
-| [meltano/tap-carbon-intensity](https://gitlab.com/meltano/tap-carbon-intensity) | GitLab | — | Connecteur vers l'API Carbon Intensity (UK). |
-| [inria/mlanvin/compute_carbon_footprint_g5k](https://gitlab.inria.fr/mlanvin/compute_carbon_footprint_g5k) | GitLab INRIA | — | Carbone d'un job Grid'5000. Le modèle reste simple (puissance ∝ usage CPU, bornée au TDP) et **documente son périmètre et ses exclusions**. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [electricitymaps/electricitymaps-contrib](https://github.com/electricitymaps/electricitymaps-contrib) | GitHub | Parsers open source de l'**intensité carbone du réseau** mondial. Fournit le gCO₂e/kWh horaire et localisé. |
+| [cloud-carbon-footprint/cloud-carbon-footprint](https://github.com/cloud-carbon-footprint/cloud-carbon-footprint) | GitHub | kWh + tCO₂e à partir des factures AWS/GCP/Azure. [Plugin Backstage](https://github.com/cloud-carbon-footprint/ccf-backstage-plugin) disponible. |
+| [Green-Software-Foundation/carbon-aware-sdk](https://github.com/Green-Software-Foundation/carbon-aware-sdk) | GitHub | SDK pour décaler ou placer un calcul selon l'intensité carbone. |
+| [Green-Software-Foundation/real-time-cloud](https://github.com/Green-Software-Foundation/real-time-cloud) | GitHub | Standards de données énergie/carbone temps réel pour les fournisseurs cloud. |
+| [GoogleCloudPlatform/region-picker](https://github.com/GoogleCloudPlatform/region-picker) | GitHub | Choix d'une région cloud arbitrant carbone, prix et latence. |
+| [Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC](https://github.com/Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC) | GitHub | Rapport énergie + carbone de ses jobs Slurm. Pendant HPC de Green Algorithms. |
+| [fledee/ecodynelec](https://gitlab.com/fledee/ecodynelec) | GitLab | Impacts de l'électricité européenne en **suivant les flux entre pays**, donc sur le mix réellement consommé. |
+| [elioth/dynco2](https://gitlab.com/elioth/dynco2) | GitLab | Forçage radiatif instantané d'une série d'émissions (modèle DynCO2), pour aller au-delà du gCO₂e. |
+| [meltano/tap-carbon-intensity](https://gitlab.com/meltano/tap-carbon-intensity) | GitLab | Connecteur vers l'API Carbon Intensity (UK). |
+| [inria/mlanvin/compute_carbon_footprint_g5k](https://gitlab.inria.fr/mlanvin/compute_carbon_footprint_g5k) | GitLab INRIA | Carbone d'un job Grid'5000. Le modèle reste simple (puissance ∝ usage CPU, bornée au TDP) et **documente son périmètre et ses exclusions**. |
 
 ### B.5 Normaliser le calcul
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [Green-Software-Foundation/sci](https://github.com/Green-Software-Foundation/sci) | GitHub | 296 | **Software Carbon Intensity** : spécification normative, `SCI = (E × I + M) / R`. Cadre de référence pour structurer un calculateur. |
-| [Green-Software-Foundation/if](https://github.com/Green-Software-Foundation/if) | GitHub | 183 | Impact Framework : pipeline déclaratif (YAML) composé de plugins. L'architecture dont s'inspirer pour l'outil à construire. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [Green-Software-Foundation/sci](https://github.com/Green-Software-Foundation/sci) | GitHub | **Software Carbon Intensity** : spécification normative, `SCI = (E × I + M) / R`. Cadre de référence pour structurer un calculateur. |
+| [Green-Software-Foundation/if](https://github.com/Green-Software-Foundation/if) | GitHub | Impact Framework : pipeline déclaratif (YAML) composé de plugins. L'architecture dont s'inspirer pour l'outil à construire. |
 
 ### B.6 Intégrer à la CI/CD et à l'ordonnancement
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [gwittebolle/claude-carbon](https://github.com/gwittebolle/claude-carbon) | GitHub | 186 | Empreinte carbone de **sessions d'agent de code**, le cas d'usage voisin du nôtre. |
-| [green-coding-solutions/eco-ci-energy-estimation](https://github.com/green-coding-solutions/eco-ci-energy-estimation) | GitHub | 116 | Estimation d'énergie dans GitHub Actions, GitLab CI et Jenkins. |
-| [GreenScheduler/cats](https://github.com/GreenScheduler/cats) | GitHub | 79 | Climate-Aware Task Scheduler : décale un job vers un créneau bas carbone. |
-| [Institut-du-Numerique-Responsable/green-claude](https://github.com/Institut-du-Numerique-Responsable/green-claude) | GitHub | 45 | Skill d'éco-conception (RGESN, GR491, Green Software) pour Claude Code. |
-| [deepshotinc/gitgreen](https://gitlab.com/deepshotinc/gitgreen) | GitLab | — | CI/CD *carbon-aware* pour GitLab sur GCP. [Version auto-hébergée](https://gitlab.com/deepshotinc/gitgreen-server). |
-| [youneslaaroussi/duoops](https://gitlab.com/youneslaaroussi/duoops) | GitLab | — | CLI et portail de transparence des pipelines GitLab, volet émissions inclus. |
-| [dimasna96/greenstatus](https://gitlab.com/dimasna96/greenstatus) | GitLab | — | Composant CI/CD : tests d'API + calcul CO₂, rapport publié sur GitLab Pages. |
-| [demeringo/scaphandre-runner](https://gitlab.com/demeringo/scaphandre-runner) | GitLab | — | Exécution de Scaphandre dans GitLab CI. |
-| [sustainable-computing-systems/carbond](https://gitlab.com/sustainable-computing-systems/carbond) | GitLab | — | Démon système pour la *carbon awareness*. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [gwittebolle/claude-carbon](https://github.com/gwittebolle/claude-carbon) | GitHub | Empreinte carbone de **sessions d'agent de code**, le cas d'usage voisin du nôtre. |
+| [green-coding-solutions/eco-ci-energy-estimation](https://github.com/green-coding-solutions/eco-ci-energy-estimation) | GitHub | Estimation d'énergie dans GitHub Actions, GitLab CI et Jenkins. |
+| [GreenScheduler/cats](https://github.com/GreenScheduler/cats) | GitHub | Climate-Aware Task Scheduler : décale un job vers un créneau bas carbone. |
+| [Institut-du-Numerique-Responsable/green-claude](https://github.com/Institut-du-Numerique-Responsable/green-claude) | GitHub | Skill d'éco-conception (RGESN, GR491, Green Software) pour Claude Code. |
+| [deepshotinc/gitgreen](https://gitlab.com/deepshotinc/gitgreen) | GitLab | CI/CD *carbon-aware* pour GitLab sur GCP. [Version auto-hébergée](https://gitlab.com/deepshotinc/gitgreen-server). |
+| [youneslaaroussi/duoops](https://gitlab.com/youneslaaroussi/duoops) | GitLab | CLI et portail de transparence des pipelines GitLab, volet émissions inclus. |
+| [dimasna96/greenstatus](https://gitlab.com/dimasna96/greenstatus) | GitLab | Composant CI/CD : tests d'API + calcul CO₂, rapport publié sur GitLab Pages. |
+| [demeringo/scaphandre-runner](https://gitlab.com/demeringo/scaphandre-runner) | GitLab | Exécution de Scaphandre dans GitLab CI. |
+| [sustainable-computing-systems/carbond](https://gitlab.com/sustainable-computing-systems/carbond) | GitLab | Démon système pour la *carbon awareness*. |
 
 ### B.7 Mesurer côté service numérique
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [marmelab/greenframe-cli](https://github.com/marmelab/greenframe-cli) | GitHub | 283 | Empreinte carbone d'un **scénario utilisateur** sur une application web. Mesure conteneurisée réelle, sans modèle intermédiaire. |
-| [green-code-initiative/creedengo-rules-specifications](https://github.com/green-code-initiative/creedengo-rules-specifications) | GitHub | 216 | Règles d'écoconception logicielle pour SonarQube (ex-ecoCode). |
-| [cnumr/EcoIndex](https://github.com/cnumr/EcoIndex) | GitHub | 92 | EcoIndex : score environnemental d'une page web. Voir [EcoIndex_python](https://github.com/cnumr/EcoIndex_python). |
-| [green-code-initiative/EcoSonar](https://github.com/green-code-initiative/EcoSonar) | GitHub | 59 | Audit d'écoconception intégré à la CI. |
-| [wholegrain/carbon-api-2-0](https://gitlab.com/wholegrain/carbon-api-2-0) | GitLab | 46 | API Website Carbon. Dépréciée, mais son modèle de calcul se lit facilement. |
-| [wholegrain/website-carbon-badges](https://gitlab.com/wholegrain/website-carbon-badges) | GitLab | 40 | Badges d'émissions d'une page web. |
-| [gibbonjoyeux/bare-tracker-extension](https://gitlab.com/gibbonjoyeux/bare-tracker-extension) | GitLab | — | Extension navigateur exposant l'impact de la navigation. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [marmelab/greenframe-cli](https://github.com/marmelab/greenframe-cli) | GitHub | Empreinte carbone d'un **scénario utilisateur** sur une application web. Mesure conteneurisée réelle, sans modèle intermédiaire. |
+| [green-code-initiative/creedengo-rules-specifications](https://github.com/green-code-initiative/creedengo-rules-specifications) | GitHub | Règles d'écoconception logicielle pour SonarQube (ex-ecoCode). |
+| [cnumr/EcoIndex](https://github.com/cnumr/EcoIndex) | GitHub | EcoIndex : score environnemental d'une page web. Voir [EcoIndex_python](https://github.com/cnumr/EcoIndex_python). |
+| [green-code-initiative/EcoSonar](https://github.com/green-code-initiative/EcoSonar) | GitHub | Audit d'écoconception intégré à la CI. |
+| [wholegrain/carbon-api-2-0](https://gitlab.com/wholegrain/carbon-api-2-0) | GitLab | API Website Carbon. Dépréciée, mais son modèle de calcul se lit facilement. |
+| [wholegrain/website-carbon-badges](https://gitlab.com/wholegrain/website-carbon-badges) | GitLab | Badges d'émissions d'une page web. |
+| [gibbonjoyeux/bare-tracker-extension](https://gitlab.com/gibbonjoyeux/bare-tracker-extension) | GitLab | Extension navigateur exposant l'impact de la navigation. |
 
 ### B.8 Communs, guides et listes curées
 
-| Ressource | Plateforme | ⭐ | Apport |
-|---|---|---:|---|
-| [aac-ademe/consortium-ia-durable](https://gitlab.com/aac-ademe/consortium-ia-durable) | GitLab | — | Commun numérique ADEME qui coordonne CodeCarbon et EcoLogits, publie un [guide IA durable](https://challengedata.ens.fr/ia_durable/guide) et anime un espace de formation (branche `toy_projects_fr`). Le point d'entrée côté français. |
-| [samuelrince/awesome-green-ai](https://github.com/samuelrince/awesome-green-ai) | GitHub | 114 | Liste curée d'outils et ressources Green AI, pour prolonger la veille. |
-| [schaDev/GreenCoding-measuring-tools](https://github.com/schaDev/GreenCoding-measuring-tools) | GitHub | 47 | Panorama comparatif des outils de mesure énergie/CO₂ des logiciels. |
-| [in2p3/ecoinfo/bonnes-pratiques](https://gitlab.in2p3.fr/ecoinfo/bonnes-pratiques) | GitLab IN2P3 | — | Guide EcoInfo (CNRS) de bonnes pratiques pour l'informatique de l'ESR. |
-| [aac-ademe](https://gitlab.com/aac-ademe) | GitLab | — | Groupe complet des appels à communs ADEME, dont `datacenter-footprint`. |
+| Ressource | Plateforme | Apport |
+|---|---|---|
+| [aac-ademe/consortium-ia-durable](https://gitlab.com/aac-ademe/consortium-ia-durable) | GitLab | Commun numérique ADEME qui coordonne CodeCarbon et EcoLogits, publie un [guide IA durable](https://challengedata.ens.fr/ia_durable/guide) et anime un espace de formation (branche `toy_projects_fr`). Le point d'entrée côté français. |
+| [samuelrince/awesome-green-ai](https://github.com/samuelrince/awesome-green-ai) | GitHub | Liste curée d'outils et ressources Green AI, pour prolonger la veille. |
+| [schaDev/GreenCoding-measuring-tools](https://github.com/schaDev/GreenCoding-measuring-tools) | GitHub | Panorama comparatif des outils de mesure énergie/CO₂ des logiciels. |
+| [in2p3/ecoinfo/bonnes-pratiques](https://gitlab.in2p3.fr/ecoinfo/bonnes-pratiques) | GitLab IN2P3 | Guide EcoInfo (CNRS) de bonnes pratiques pour l'informatique de l'ESR. |
+| [aac-ademe](https://gitlab.com/aac-ademe) | GitLab | Groupe complet des appels à communs ADEME, dont `datacenter-footprint`. |
 
 ---
-
 ## C. Proposition de méthodologie
 
 Synthèse de calcul tirée des parties A et B.
