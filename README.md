@@ -5,6 +5,7 @@
 [![87 ressources](https://img.shields.io/badge/ressources-87_ressources-2c6e9b?style=flat-square)](#b-ressources-logicielles)
 [![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
 [![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
+[![Institut du Numérique Responsable](https://img.shields.io/badge/Institut%20du%20Numérique%20Responsable-0055a4?style=flat-square&logo=organization&logoColor=white)](https://institutnr.org)
 [![Maintenu par INR](https://img.shields.io/badge/maintenu%20par-INR-0055a4?style=flat-square&logo=organization)](https://institutnr.org)
 
 > **TL;DR** : Ce dépôt rassemble **79 publications** (HAL/arXiv/revues) et **87 outils open source** pour calculer l'impact environnemental de l'IA (carbone, énergie, eau, ADPe). Méthodologie ACV complète pour les LLM, avec des outils comme CodeCarbon, EcoLogits, Scaphandre et perf-sentinel.
