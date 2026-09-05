@@ -361,6 +361,7 @@ Scope 3 varie d'un opérateur à l'autre.
 |---|---|---|
 | **IA4Dev 2025** | Conférence francophone sur l'IA durable, avec des retours d'expérience et des ateliers pratiques. | [ia4dev-2025.sciencesconf.org](https://ia4dev-2025.sciencesconf.org/resource/page/id/1) |
 | **MOOC Fun-MOOC : IA et Société** | Cours en ligne ouvert sur les enjeux sociétaux et environnementaux de l'IA, accessible à tous. | [fun-mooc.fr/IA-et-société](https://www.fun-mooc.fr/fr/cours/intelligence-artificielle-et-societe/) |
+| **MOOC INR : IA responsable** | Formation en ligne sur l'IA responsable, abordant les aspects environnementaux et éthiques. | [institut-numerique-responsable.fr](https://institut-numerique-responsable.fr/) |
 | **Canal U : Formation ENVOL** | Formation vidéo sur l'IA en aide au développement, incluant des modules sur l'impact environnemental. | [canal-u.tv/ENVOl](https://www.canal-u.tv/chaines/devlog/formation-envol-l-intelligence-artificielle-en-aide-au-developpement) |
 | **RAG'AR'ENN** | Réseau breton pour une IA responsable, ressources et événements locaux. | [ragarenn.eskemm-numerique.fr](https://ragarenn.eskemm-numerique.fr/index.html) |
 | **Emmy, plateforme vidéo CNRS** | Chaîne dédiée aux conférences et formation sur l'IA et l'environnement. | [emmy.cnrs.fr](https://emmy.cnrs.fr/) |
