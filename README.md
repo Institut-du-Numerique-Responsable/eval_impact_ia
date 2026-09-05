@@ -1,7 +1,7 @@
 # base de ressources & de documents pour un calculateur d'impact environnemental de l'IA
 
 [![Licence CC0 1.0](https://img.shields.io/badge/licence-CC0_1.0-6a9955?style=flat-square)](LICENSE)
-[![33 références HAL](https://img.shields.io/badge/références-33_publications_HAL-2c6e9b?style=flat-square)](#a-références-documentaires)
+[![44 références](https://img.shields.io/badge/références-44_publications-2c6e9b?style=flat-square)](#a-références-documentaires)
 [![62 ressources logicielles](https://img.shields.io/badge/ressources-62_dépôts-2c6e9b?style=flat-square)](#b-ressources-logicielles)
 [![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
 [![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
@@ -20,7 +20,8 @@ indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
 
 ## A. Références documentaires
 
-Publications HAL, rangées par brique du calculateur.
+Publications rangées par brique du calculateur. HAL pour la recherche
+francophone, arXiv pour le reste.
 
 ### A.1 ACV complète d'un modèle : méthodes de référence
 
@@ -31,6 +32,7 @@ Publications HAL, rangées par brique du calculateur.
 | [L'empreinte environnementale complète d'un usage numérique](https://theses.hal.science/tel-04874694v1) | 2024 | Thèse | Cadre ACV pour un service numérique, du terminal au datacenter. |
 | [Analysis of the Relationship Between Carbon Footprint and Mineral Resource Depletion in the LCA of Digital Systems](https://hal.science/hal-05631178v1) | 2026 | Communication | Pourquoi ne pas s'arrêter au carbone : le couple GWP / ADPe. |
 | [Automating Inventory for LCA of Computing Systems through Machine Vision](https://hal.science/hal-05661956v1) | 2026 | Communication | Automatiser l'inventaire matériel, verrou classique de l'ACV. |
+| [Estimating the Carbon Footprint of BLOOM, a 176B Parameter Language Model](https://arxiv.org/abs/2211.02001) | 2022 | Préprint | Hugging Face décompose l'empreinte d'un LLM ouvert : entraînement, fabrication du matériel, déploiement. Le modèle de décomposition à reprendre. |
 
 ### A.2 Énergie d'entraînement et d'inférence : les modèles prédictifs
 
@@ -44,6 +46,13 @@ Publications HAL, rangées par brique du calculateur.
 | [Adaptive Inference for Cost-Efficient Deep Neural Networks](https://hal.science/tel-05504891v2) | 2026 | Thèse | Inférence adaptative : moduler le coût selon la difficulté de l'entrée. |
 | [A Testbed Framework for Estimating the Environmental Impact of Agentic AI Workflows in HPC](https://hal.science/hal-05594455v1) | 2026 | Communication | Traite les **workflows agentiques** : plusieurs appels chaînés, coût cumulé. |
 | [Heuristique, CSP ou LLM ? Étude comparative du coût énergétique du placement de services](https://hal.science/hal-05713191v1) | 2026 | Communication | Compare le coût énergétique de l'IA à celui d'une alternative algorithmique classique. |
+| [From Words to Watts: Benchmarking the Energy Costs of Large Language Model Inference](https://arxiv.org/abs/2310.03003) | 2023 | Préprint | Le MIT Lincoln Laboratory mesure l'énergie d'inférence des LLM sur supercalculateur, par taille de modèle et par configuration. |
+| [Power Hungry Processing: Watts Driving the Cost of AI Deployment?](https://arxiv.org/abs/2311.16863) | 2023 | Préprint | Hugging Face compare l'énergie d'inférence selon la tâche : la génération d'image coûte des ordres de grandeur de plus que la classification. |
+| [Great Power, Great Responsibility: Recommendations for Reducing Energy for Training Language Models](https://arxiv.org/abs/2205.09646) | 2022 | Préprint | Le MIT chiffre les gains du bridage de puissance des GPU et de l'arrêt anticipé d'entraînement. |
+| [Carbon Emissions and Large Neural Network Training](https://arxiv.org/abs/2104.10350) | 2021 | Préprint | Google et Berkeley posent les facteurs qui font varier l'empreinte d'un facteur 100 : modèle, matériel, datacenter, mix électrique. |
+| [Carbontracker: Tracking and Predicting the Carbon Footprint of Training Deep Learning Models](https://arxiv.org/abs/2007.03051) | 2020 | Préprint | L'Université de Copenhague décrit la méthode de prédiction implémentée dans `carbontracker` (partie B.1). |
+| [Quantifying the Carbon Emissions of Machine Learning](https://arxiv.org/abs/1910.09700) | 2019 | Préprint | L'article fondateur du calculateur ML CO2 Impact (partie B.1). La formule minimale, à connaître avant de la complexifier. |
+| [Energy and Policy Considerations for Deep Learning in NLP](https://arxiv.org/abs/1906.02243) | 2019 | Préprint | Le texte qui a ouvert le sujet, en chiffrant l'entraînement des modèles de langue et la recherche d'hyperparamètres. |
 
 ### A.3 Infrastructure : datacenter, HPC, stockage
 
@@ -58,6 +67,7 @@ Publications HAL, rangées par brique du calculateur.
 | [Carbon Topography Representation: Improving Impacts of Data Center Lifecycle](https://hal.science/hal-05138320v1) | 2025 | Communication | Représentation spatialisée des impacts sur le cycle de vie. |
 | [ETP4HPC SRA 6 White Paper — Energy Efficiency and Sustainability](https://hal.science/hal-05494490v1) | 2026 | Rapport | Feuille de route européenne HPC. |
 | [Energy-Aware Computing in the Year 2026](https://minesparis-psl.hal.science/hal-05632692v1) | 2026 | Communication | État de l'art du calcul économe. |
+| [Making AI Less "Thirsty": Uncovering and Addressing the Secret Water Footprint of AI Models](https://arxiv.org/abs/2304.03271) | 2023 | Préprint | Le Ren Research Group (UC Riverside) sépare l'eau consommée sur site pour le refroidissement de celle consommée hors site pour produire l'électricité. La principale source sur l'axe eau. |
 
 ### A.4 Cadrage, politiques publiques, effet rebond
 
@@ -68,6 +78,8 @@ Publications HAL, rangées par brique du calculateur.
 | [The Environmental Impacts of Machine Learning Training Keep Rising — Evidencing Rebound Effect](https://hal.science/hal-04839926v5) | 2025 | Article | Montre empiriquement que les gains d'efficacité sont absorbés par la hausse des usages. |
 | [When rebound effect is not a side effect](https://hal.science/hal-05566029v1) | 2026 | Article | Analyse sociotechnique de l'effet rebond du numérique. |
 | [How Hyper-Datafication Impacts the Sustainability Costs in Frontier AI](https://inria.hal.science/hal-05651665v1) | 2026 | Communication (FAccT) | Coûts de soutenabilité liés à l'explosion des données. |
+| [AI Index Report, chapitre énergie et environnement](https://hai.stanford.edu/ai-index/2026-ai-index-report) | 2026 | Rapport annuel | Stanford HAI publie le seul suivi chiffré comparable d'une année sur l'autre : émissions d'entraînement par modèle, capacité électrique des datacenters, eau d'inférence. |
+| [Green AI](https://arxiv.org/abs/1907.10597) | 2019 | Préprint | Oppose la course à la performance à tout prix et propose l'efficacité comme critère d'évaluation des travaux de recherche. |
 
 ### A.5 Restitution, pédagogie, perception
 
