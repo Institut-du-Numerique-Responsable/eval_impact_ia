@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: >-
+  Base de ressources et de documents pour un calculateur d'impact
+  environnemental de l'IA
+message: >-
+  Si vous utilisez cette base de ressources, merci de la citer comme suit.
+type: dataset
+authors:
+  - name: Institut du Numérique Responsable
+    website: https://institutnr.org
+abstract: >-
+  Inventaire raisonné des publications scientifiques (HAL) et des ressources
+  logicielles open source (GitHub, GitLab) permettant de calculer l'impact
+  environnemental de l'intelligence artificielle : émissions de gaz à effet de
+  serre (gCO2e), consommation énergétique (kWh), consommation d'eau et
+  épuisement des ressources abiotiques (ADPe). Couvre l'analyse de cycle de vie
+  des modèles, la métrologie énergétique, les impacts de fabrication du
+  matériel, l'intensité carbone de l'électricité et les cadres de calcul
+  normalisés.
+keywords:
+  - intelligence artificielle
+  - impact environnemental
+  - empreinte carbone
+  - analyse de cycle de vie
+  - consommation énergétique
+  - numérique responsable
+  - green AI
+  - LLM
+repository-code: https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia
+license: CC0-1.0

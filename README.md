@@ -1,5 +1,11 @@
 # base de ressources & de documents pour un calculateur d'impact environnemental de l'IA
 
+[![Licence CC0 1.0](https://img.shields.io/badge/licence-CC0_1.0-6a9955?style=flat-square)](LICENSE)
+[![33 références HAL](https://img.shields.io/badge/références-33_publications_HAL-2c6e9b?style=flat-square)](#a-références-documentaires)
+[![62 ressources logicielles](https://img.shields.io/badge/ressources-62_dépôts-2c6e9b?style=flat-square)](#b-ressources-logicielles)
+[![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
+[![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
+
 Construire un calculateur d'impact environnemental de l'IA demande deux choses :
 une méthode et des briques de code. Cette page rassemble les deux, pour quatre
 indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
