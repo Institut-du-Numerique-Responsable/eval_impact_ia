@@ -14,6 +14,7 @@ indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
 - [A. Références documentaires](#a-références-documentaires) : la méthode, les ordres de grandeur, le cadrage. Publications HAL.
 - [B. Ressources logicielles](#b-ressources-logicielles) : les briques réutilisables. Dépôts GitHub et GitLab.
 - [C. Proposition de méthodologie](#c-proposition-de-méthodologie) : la synthèse de calcul et les sept points de vigilance.
+- [D. Où chercher d'autres sources](#d-où-chercher-dautres-sources) : laboratoires, portails et rapports de référence.
 
 ---
 
@@ -214,3 +215,39 @@ Sept points de vigilance, avec les sections qui les documentent :
 | 6 | **Séparer mesure et estimation.** Mesurez quand vous avez la machine, modélisez quand vous n'avez qu'une API. | A.2, B.1, B.2 |
 | 7 | **S'aligner sur une spec existante.** Le cadre est déjà écrit. | B.5 |
 
+---
+
+## D. Où chercher d'autres sources
+
+Les parties A et B recensent des documents et du code. Cette partie donne les
+endroits d'où ils sortent, pour continuer la veille sans repartir d'un moteur de
+recherche.
+
+### D.1 Rapports de référence, mis à jour chaque année
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **Stanford HAI, AI Index Report** | Un chapitre entier consacré à l'énergie et à l'environnement : capacité électrique des datacenters d'IA, émissions d'entraînement par modèle, eau d'inférence, écart d'efficacité entre modèles. Le seul suivi annuel chiffré et comparable. | [AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report) · [dossier énergie et environnement](https://hai.stanford.edu/topics/energy-environment) |
+| **Agence internationale de l'énergie** | Projections de consommation électrique des datacenters et de l'IA à l'échelle mondiale. La source à citer pour les ordres de grandeur macro. | [Energy and AI](https://www.iea.org/reports/energy-and-ai) |
+| **Arcep et ADEME** | Évaluation de l'empreinte environnementale du numérique en France, méthodologie et données publiques. Le référentiel réglementaire français. | [Dossier Arcep](https://www.arcep.fr/la-regulation/grands-dossiers-thematiques-transverses/lempreinte-environnementale-du-numerique.html) |
+| **Hugging Face, AI Energy Score** | Classement d'efficacité énergétique des modèles, protocole de mesure publié. Sert à comparer avant de choisir un modèle. | [Leaderboard](https://huggingface.co/spaces/AIEnergyScore/Leaderboard) |
+
+### D.2 Laboratoires qui publient régulièrement
+
+| Laboratoire | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **MIT Lincoln Laboratory Supercomputing Center** | Mesure et réduction de l'énergie des LLM sur supercalculateur : bridage de puissance des GPU, arrêt anticipé d'entraînement, instrumentation de datacenter. Voir *From Words to Watts*, qui chiffre l'énergie d'inférence. | [LLSC](https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences/lincoln-laboratory-supercomputing-center) · [From Words to Watts](https://arxiv.org/abs/2310.03003) · [MIT Sustainability](https://sustainability.mit.edu/) |
+| **Université de Copenhague, département d'informatique** | L'équipe de Raghavendra Selvan, qui a produit `carbontracker` (partie B.1) et travaille sur la *climate-aware AI*. Publications et jeux de mesures accessibles. | [Page de Selvan](https://raghavian.github.io/) · [Actualité DIKU](https://di.ku.dk/english/news/2023/what-can-we-do-about-the-increasing-carbon-footprint-of-ai/) · [Portail de recherche KU](https://researchprofiles.ku.dk/en/publications/carbontracker-tracking-and-predicting-the-carbon-footprint-of-tra/) |
+| **Sorbonne Université, LIP6** | Ordonnancement économe, profilage énergétique logiciel et mobile, consommation des services réseau. Plus de 150 dépôts HAL sur le sujet. | [LIP6](https://www.lip6.fr/) · [Portail HAL Sorbonne](https://hal.sorbonne-universite.fr/) |
+| **EPFL et Université de Lausanne** | Empreinte du numérique à l'échelle d'un pays et d'un campus, sobriété numérique. L'étude suisse 2025 associe EPFL, UNIL et l'IMD. | [Recherche et durabilité EPFL](https://www.epfl.ch/about/sustainability/research-innovation/) · [Sobriété numérique](https://actu.epfl.ch/news/la-sobriete-numerique-passe-au-rang-des-priorite-2/) · [IGD, UNIL](https://www.unil.ch/igd/home.html) |
+| **Ren Research Group** | L'empreinte eau de l'IA, angle le moins couvert ailleurs. Code et données de *Making AI Less Thirsty*. | [Dépôts](https://github.com/Ren-Research) · [Article](https://arxiv.org/abs/2304.03271) |
+| **Inria, IRISA, LIG** | Calcul économe, ordonnancement carbone, métrologie sur Grid'5000. Plus de 500 dépôts HAL pour l'IRISA, 200 pour le LIG. | [Portail HAL Inria](https://inria.hal.science/) |
+
+### D.3 Réseaux et portails à interroger directement
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **EcoInfo, groupement de service CNRS** | Le réseau français de l'informatique responsable dans la recherche : guides, calculateurs, retours de terrain. | [ecoinfo.cnrs.fr](https://ecoinfo.cnrs.fr/) |
+| **Labos 1point5** | Empreinte carbone des laboratoires de recherche, dont le calcul lié aux moyens informatiques. Outils et données ouvertes. | [labos1point5.org](https://labos1point5.org/) |
+| **HAL** | Le moteur derrière la partie A. Interroger par collection de laboratoire donne des résultats plus propres qu'une recherche libre. | [Recherche HAL](https://hal.science/search/index/?q=%22empreinte+carbone%22+IA) |
+| **arXiv** | La littérature anglophone, souvent publiée là avant toute revue. Catégories `cs.LG`, `cs.CY` et `cs.DC`. | [arXiv cs.CY](https://arxiv.org/list/cs.CY/recent) |
