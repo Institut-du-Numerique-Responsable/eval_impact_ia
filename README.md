@@ -1,8 +1,8 @@
 # base de ressources & de documents pour un calculateur d'impact environnemental de l'IA
 
 [![Licence CC0 1.0](https://img.shields.io/badge/licence-CC0_1.0-6a9955?style=flat-square)](LICENSE)
-[![44 références](https://img.shields.io/badge/références-44_publications-2c6e9b?style=flat-square)](#a-références-documentaires)
-[![62 ressources logicielles](https://img.shields.io/badge/ressources-62_dépôts-2c6e9b?style=flat-square)](#b-ressources-logicielles)
+[![56 références](https://img.shields.io/badge/références-56_publications-2c6e9b?style=flat-square)](#a-références-documentaires)
+[![63 ressources](https://img.shields.io/badge/ressources-63_ressources-2c6e9b?style=flat-square)](#b-ressources-logicielles)
 [![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
 [![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
 
@@ -14,6 +14,7 @@ indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
 - [A. Références documentaires](#a-références-documentaires) : la méthode, les ordres de grandeur, le cadrage. Publications HAL.
 - [B. Ressources logicielles](#b-ressources-logicielles) : les briques réutilisables. Dépôts GitHub et GitLab.
 - [C. Proposition de méthodologie](#c-proposition-de-méthodologie) : la synthèse de calcul et les sept points de vigilance.
+- [SOURCES.md](SOURCES.md) : ce qui a été balayé, comment, et ce qui a été écarté.
 - [D. Où chercher d'autres sources](#d-où-chercher-dautres-sources) : laboratoires, portails et rapports de référence.
 
 ---
@@ -32,6 +33,10 @@ francophone, arXiv pour le reste.
 | [L'empreinte environnementale complète d'un usage numérique](https://theses.hal.science/tel-04874694v1) | 2024 | Thèse | Cadre ACV pour un service numérique, du terminal au datacenter. |
 | [Analysis of the Relationship Between Carbon Footprint and Mineral Resource Depletion in the LCA of Digital Systems](https://hal.science/hal-05631178v1) | 2026 | Communication | Pourquoi ne pas s'arrêter au carbone : le couple GWP / ADPe. |
 | [Automating Inventory for LCA of Computing Systems through Machine Vision](https://hal.science/hal-05661956v1) | 2026 | Communication | Automatiser l'inventaire matériel, verrou classique de l'ACV. |
+| [ACV de Mistral Large 2](https://mistral.ai/fr/news/our-contribution-to-a-global-environmental-standard-for-ai/) | 2025 | ACV produit | Le seul éditeur de modèle à publier une ACV complète : 20,4 ktCO₂e, 281 000 m³ d'eau et 660 kg Sb eq pour l'entraînement et 18 mois d'usage, puis 1,14 gCO₂e et 45 mL d'eau pour une réponse de 400 tokens. Conforme aux normes ISO 14040/44 et au GHG Protocol Product Standard, menée avec Carbone 4 et l'ADEME, relue par Resilio et Hubblo. Le format de restitution à viser. |
+| [Beyond Efficiency: A Systematic Review of Energy Consumption and Carbon Footprint Across the AI Lifecycle](https://doi.org/10.3390/su18031359) | 2026 | Revue systématique | Synthèse des études quantitatives sur tout le cycle de vie : entraînement, inférence, matériel, infrastructure. Le point de départ pour fixer un périmètre. |
+| [Generative AI impact assessment through a life cycle analysis of multiple data center typologies](https://doi.org/10.1016/j.apenergy.2025.127288) | 2026 | Article (Applied Energy) | Compare l'ACV de plusieurs architectures de datacenter et montre le poids du choix de modèle et de la localisation. |
+| [Quantifying and Disclosing the Environmental Footprint of AI in Research: Life Cycle-Informed Framework and Open-Access Calculator](https://doi.org/10.2196/90770) | 2026 | Article (JMIR AI) | Cadre de calcul complet : énergie opérationnelle, intensité réseau, PUE, eau, fabrication du matériel. Définit un jeu minimal de données à publier pour qu'un résultat soit vérifiable. |
 | [Estimating the Carbon Footprint of BLOOM, a 176B Parameter Language Model](https://arxiv.org/abs/2211.02001) | 2022 | Préprint | Hugging Face décompose l'empreinte d'un LLM ouvert : entraînement, fabrication du matériel, déploiement. Le modèle de décomposition à reprendre. |
 
 ### A.2 Énergie d'entraînement et d'inférence : les modèles prédictifs
@@ -46,6 +51,8 @@ francophone, arXiv pour le reste.
 | [Adaptive Inference for Cost-Efficient Deep Neural Networks](https://hal.science/tel-05504891v2) | 2026 | Thèse | Inférence adaptative : moduler le coût selon la difficulté de l'entrée. |
 | [A Testbed Framework for Estimating the Environmental Impact of Agentic AI Workflows in HPC](https://hal.science/hal-05594455v1) | 2026 | Communication | Traite les **workflows agentiques** : plusieurs appels chaînés, coût cumulé. |
 | [Heuristique, CSP ou LLM ? Étude comparative du coût énergétique du placement de services](https://hal.science/hal-05713191v1) | 2026 | Communication | Compare le coût énergétique de l'IA à celui d'une alternative algorithmique classique. |
+| [The Carbon Cost of Intelligence: A Domain-Specific Framework for Measuring AI Energy and Emissions](https://doi.org/10.3390/en19030642) | 2026 | Article (Energies) | Segmente l'empreinte par type de charge de travail, avec des mesures empiriques sur GPT-4. Utile pour raisonner par usage plutôt que par modèle. |
+| [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288) | 2023 | Rapport technique | Un des rares rapports de modèle à documenter matériel, durée de pré-entraînement et estimation carbone. Le niveau de transparence à exiger. |
 | [From Words to Watts: Benchmarking the Energy Costs of Large Language Model Inference](https://arxiv.org/abs/2310.03003) | 2023 | Préprint | Le MIT Lincoln Laboratory mesure l'énergie d'inférence des LLM sur supercalculateur, par taille de modèle et par configuration. |
 | [Power Hungry Processing: Watts Driving the Cost of AI Deployment?](https://arxiv.org/abs/2311.16863) | 2023 | Préprint | Hugging Face compare l'énergie d'inférence selon la tâche : la génération d'image coûte des ordres de grandeur de plus que la classification. |
 | [Great Power, Great Responsibility: Recommendations for Reducing Energy for Training Language Models](https://arxiv.org/abs/2205.09646) | 2022 | Préprint | Le MIT chiffre les gains du bridage de puissance des GPU et de l'arrêt anticipé d'entraînement. |
@@ -67,6 +74,7 @@ francophone, arXiv pour le reste.
 | [Carbon Topography Representation: Improving Impacts of Data Center Lifecycle](https://hal.science/hal-05138320v1) | 2025 | Communication | Représentation spatialisée des impacts sur le cycle de vie. |
 | [ETP4HPC SRA 6 White Paper — Energy Efficiency and Sustainability](https://hal.science/hal-05494490v1) | 2026 | Rapport | Feuille de route européenne HPC. |
 | [Energy-Aware Computing in the Year 2026](https://minesparis-psl.hal.science/hal-05632692v1) | 2026 | Communication | État de l'art du calcul économe. |
+| [The carbon and water footprints of data centers and what this could mean for artificial intelligence](https://doi.org/10.1016/j.patter.2025.101430) | 2026 | Article (Patterns) | Traite carbone et eau ensemble à l'échelle du datacenter, et pointe ce que les opérateurs ne publient pas. |
 | [Making AI Less "Thirsty": Uncovering and Addressing the Secret Water Footprint of AI Models](https://arxiv.org/abs/2304.03271) | 2023 | Préprint | Le Ren Research Group (UC Riverside) sépare l'eau consommée sur site pour le refroidissement de celle consommée hors site pour produire l'électricité. La principale source sur l'axe eau. |
 
 ### A.4 Cadrage, politiques publiques, effet rebond
@@ -78,6 +86,11 @@ francophone, arXiv pour le reste.
 | [The Environmental Impacts of Machine Learning Training Keep Rising — Evidencing Rebound Effect](https://hal.science/hal-04839926v5) | 2025 | Article | Montre empiriquement que les gains d'efficacité sont absorbés par la hausse des usages. |
 | [When rebound effect is not a side effect](https://hal.science/hal-05566029v1) | 2026 | Article | Analyse sociotechnique de l'effet rebond du numérique. |
 | [How Hyper-Datafication Impacts the Sustainability Costs in Frontier AI](https://inria.hal.science/hal-05651665v1) | 2026 | Communication (FAccT) | Coûts de soutenabilité liés à l'explosion des données. |
+| [Environmental Cost of Artificial Intelligence: Carbon, Water and Land Footprints](https://unu.edu/inweh/collection/environmental-cost-of-AIs-Enrgy-Use-Carbon-water-and-land-footprints) | 2026 | Rapport (UNU-INWEH) | L'Université des Nations unies quantifie trois empreintes, dont le sol, et documente les limites des données publiques. [PDF](https://collections.unu.edu/eserv/UNU:10647/UNU-INWEH-Report-The_Env_Cost_of_AI-2026.pdf) |
+| [Scenario-based forecasting of the global energy demand and carbon footprint of artificial intelligence](https://pmc.ncbi.nlm.nih.gov/articles/PMC12978478/) | 2026 | Article (PLOS ONE) | Cadre de simulation jusqu'en 2050, séparant fabrication des composants, transport et électricité. |
+| [A Systematic Review of Green and Sustainable AI: Taxonomy, Metrics, Challenges, and Open Research Directions](https://doi.org/10.3390/su18084115) | 2026 | Revue systématique | Taxonomie des pratiques et des métriques. Sert de grille de lecture pour classer un indicateur. |
+| [AI carbon footprint: The non-negligible hidden emission source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12657291/) | 2025 | Article (Eco-Environment & Health) | Recense les sources d'émissions oubliées : refroidissement, fabrication des GPU, chaîne d'approvisionnement. |
+| [L'IA générative, du changement climatique](https://carbone4.com/fr/articles/ia-generative-du-changement-climatique) | 2026 | Analyse (Carbone 4) | Agrège les chiffres disponibles côté français et documente ce que les éditeurs de modèles ne publient pas. |
 | [AI Index Report, chapitre énergie et environnement](https://hai.stanford.edu/ai-index/2026-ai-index-report) | 2026 | Rapport annuel | Stanford HAI publie le seul suivi chiffré comparable d'une année sur l'autre : émissions d'entraînement par modèle, capacité électrique des datacenters, eau d'inférence. |
 | [Green AI](https://arxiv.org/abs/1907.10597) | 2019 | Préprint | Oppose la course à la performance à tout prix et propose l'efficacité comme critère d'évaluation des travaux de recherche. |
 
@@ -196,6 +209,7 @@ confondus.
 | Ressource | Plateforme | Apport |
 |---|---|---|
 | [aac-ademe/consortium-ia-durable](https://gitlab.com/aac-ademe/consortium-ia-durable) | GitLab | Commun numérique ADEME qui coordonne CodeCarbon et EcoLogits, publie un [guide IA durable](https://challengedata.ens.fr/ia_durable/guide) et anime un espace de formation (branche `toy_projects_fr`). Le point d'entrée côté français. |
+| [AI Environmental Footprint Calculator](https://doi.org/10.2196/90770) | JMIR AI | Calculateur en accès libre couvrant énergie, PUE, eau et fabrication, avec la méthode publiée en regard (partie A.1). |
 | [samuelrince/awesome-green-ai](https://github.com/samuelrince/awesome-green-ai) | GitHub | Liste curée d'outils et ressources Green AI, pour prolonger la veille. |
 | [schaDev/GreenCoding-measuring-tools](https://github.com/schaDev/GreenCoding-measuring-tools) | GitHub | Panorama comparatif des outils de mesure énergie/CO₂ des logiciels. |
 | [in2p3/ecoinfo/bonnes-pratiques](https://gitlab.in2p3.fr/ecoinfo/bonnes-pratiques) | GitLab IN2P3 | Guide EcoInfo (CNRS) de bonnes pratiques pour l'informatique de l'ESR. |
@@ -263,3 +277,30 @@ recherche.
 | **Labos 1point5** | Empreinte carbone des laboratoires de recherche, dont le calcul lié aux moyens informatiques. Outils et données ouvertes. | [labos1point5.org](https://labos1point5.org/) |
 | **HAL** | Le moteur derrière la partie A. Interroger par collection de laboratoire donne des résultats plus propres qu'une recherche libre. | [Recherche HAL](https://hal.science/search/index/?q=%22empreinte+carbone%22+IA) |
 | **arXiv** | La littérature anglophone, souvent publiée là avant toute revue. Catégories `cs.LG`, `cs.CY` et `cs.DC`. | [arXiv cs.CY](https://arxiv.org/list/cs.CY/recent) |
+
+### D.4 Rapports des opérateurs de datacenters
+
+Ces rapports suivent le GHG Protocol et passent par un audit, ce qui en fait la
+source primaire la plus solide sur les infrastructures. Deux limites à garder en
+tête : les chiffres agrègent l'IA et le reste de l'activité, et le périmètre
+Scope 3 varie d'un opérateur à l'autre.
+
+| Opérateur | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **Google** | Émissions Scope 1 à 3, part des datacenters, consommation électrique et d'eau, effet de l'IA sur la trajectoire. | [Rapports](https://sustainability.google/reports/) |
+| **Microsoft** | Émissions annuelles, construction de datacenters, achats d'électricité renouvelable, projets de captation. Une fiche de données accompagne le rapport. | [Rapport annuel](https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report) |
+| **Amazon** | Émissions du groupe, électricité achetée, part des datacenters AWS. | [Reporting](https://sustainability.aboutamazon.com/reporting) |
+| **Meta** | Forte croissance du Scope 3, tirée par la fabrication des serveurs et la construction des datacenters. | [Sustainability](https://sustainability.atmeta.com/) |
+| **Apple** | Rapports détaillés, utiles pour la méthode de comptabilisation du matériel. | [Environment](https://www.apple.com/environment/) |
+| **NVIDIA** | Le Scope 3 dépasse 99 % du total : achats de biens et services, transport amont, usage des produits. La donnée la plus utile pour amortir la fabrication d'un GPU. | [Sustainability](https://www.nvidia.com/en-us/sustainability/) · [Archives des rapports](https://www.nvidia.com/en-gb/foundation/archives/) |
+| **Mistral AI** | Le seul éditeur de modèle à publier une ACV produit complète, détaillée en partie A.1. | [Publication](https://mistral.ai/fr/news/our-contribution-to-a-global-environmental-standard-for-ai/) |
+| **Greenpeace, analyse critique** | Ce que le reporting de NVIDIA laisse de côté, notamment les émissions d'usage des GPU hors cibles et la concentration des émissions amont en Asie de l'Est. À lire en regard du rapport officiel. | [Analyse](https://www.greenpeace.org/usa/behind-nvidias-record-profits-a-growing-climate-disaster/) |
+
+### D.5 Bases de données et facteurs d'émission
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **ecoinvent** | La base de référence pour l'ACV, avec les procédés liés aux équipements électroniques, aux datacenters et à l'électricité par région. Licence payante. | [ecoinvent.org](https://ecoinvent.org) |
+| **Base Empreinte, ADEME** | Facteurs d'émission et jeux de données ACV publics, côté français. | [base-empreinte.ademe.fr](https://base-empreinte.ademe.fr/) |
+| **Boavizta** | Impacts de fabrication des équipements, en accès libre et interrogeable par API (partie B.3). | [Données](https://github.com/Boavizta/environmental-footprint-data) |
+| **Electricity Maps** | Intensité carbone du réseau, horaire et par zone (partie B.4). | [Dépôt](https://github.com/electricitymaps/electricitymaps-contrib) |
