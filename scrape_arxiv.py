@@ -59,6 +59,8 @@ QUERIES = [
     'all:"datacenter" AND (all:"energy" OR all:"carbon") AND all:"artificial intelligence"',
     'all:"PUE" AND all:datacenter',
     'all:"sustainability" AND all:"foundation model"',
+    'all:energy AND all:policy AND (all:NLP OR all:"natural language processing")',
+    'all:"AI deployment" AND (all:energy OR all:power OR all:carbon OR all:cost)',
 ]
 
 AXES = {
@@ -76,10 +78,11 @@ AXES = {
 }
 
 IA_TERMS = [
+    " ai ", "ai-", "-ai", "ai)", "(ai", "ia ", " ia",
     "machine learning", "deep learning", "neural network", "language model",
     "llm", "gpt", "transformer", "inference", "training", "fine-tuning",
-    "foundation model", "generative ai", "artificial intelligence", "nlp",
-    "gpu", "tpu", "mlops", "diffusion model",
+    "foundation model", "generative ai", "artificial intelligence", "intelligence artificielle",
+    "nlp", "gpu", "tpu", "mlops", "diffusion model",
 ]
 
 NUM_TERMS = [
@@ -102,9 +105,11 @@ NOISE = [
 ]
 
 # Papiers de contrôle : un filtrage correct doit tous les faire remonter.
+# Note: 2608.07427 est une version mise à jour de 2311.16863 (même titre).
 VALIDATION = {
     "2310.03003": "From Words to Watts (MIT Lincoln Lab)",
     "2311.16863": "Power Hungry Processing (Hugging Face)",
+    "2608.07427": "Power Hungry Processing (Hugging Face, version mise à jour)",
     "2205.09646": "Great Power, Great Responsibility (MIT)",
     "2104.10350": "Carbon Emissions and Large Neural Network Training (Google)",
     "2007.03051": "Carbontracker (Copenhague)",

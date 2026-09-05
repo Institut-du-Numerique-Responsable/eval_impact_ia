@@ -92,8 +92,9 @@ NOISE = [
     "carbon capture", "biochar", "peatland", "soil organic carbon",
     "carbon black", "photosynth", "blue/green", "blue-green", "greenwich",
     "greenhouse gas inventory of agriculture", "minecraft", "carbon design system",
-    "carbon language", "carbonyl", "free energy perturbation", "wind turbine",
-    "solar panel", "photovoltaic", "smart meter home", "battery management",
+    "carbon language", "carbonyl", "free energy perturbation", "free energy",
+    "wind turbine", "solar panel", "photovoltaic", "smart meter home", "battery management",
+    "greenhouse",
 ]
 
 

@@ -78,21 +78,22 @@ QUERIES = [
 # Un projet est retenu s'il touche au moins un "axe impact".
 AXES = {
     "carbone": ["carbon", "carbone", "co2", "co₂", "ges", "gwp", "greenhouse",
-                "emission", "émission", "bilan carbone", "decarbon"],
+                "emission", "émission", "bilan carbone", "decarbon", "climate", "climatique"],
     "energie": ["energy", "energie", "énergie", "energétique", "energetique",
                 "kwh", "watt", "power consumption", "powermeter", "rapl",
                 "consumption", "consommation", "electricit", "electricity"],
     "eau": ["water", "eau ", " eau", "hydric", "hydrique", "water footprint"],
     "acv": ["life cycle", "lca", "acv", "cradle", "manufacturing impact",
             "embodied", "footprint", "empreinte", "environmental impact",
-            "impact environnemental", "ecoinvent", "boavizta"],
+            "impact environnemental", "ecoinvent", "boavizta", "eco-conception", "écoconception",
+            "green it", "green-it", "numerique responsable", "numérique responsable"],
     "mesure": ["measure", "mesure", "monitor", "metering", "profil", "benchmark",
                "tracker", "tracking", "exporter", "telemetry", "sensor"],
 }
 
 # Termes qui rattachent le projet au périmètre IA / calcul.
 IA_TERMS = [
-    " ai ", "ai-", "-ai", "ia ", " ia", "llm", "gpt", "machine learning",
+    " ai ", "ai-", "-ai", "ia ", " ia", "llm", "gpt", "claude", "machine learning",
     "deep learning", "neural network", "inference", "inférence", "gpu",
     "transformer", "nlp", "mlops", "genai", "intelligence artificielle",
     "artificial intelligence", "pytorch", "tensorflow", "hugging face",
