@@ -28,11 +28,15 @@ import json
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict, fields
+from functools import partial
 from pathlib import Path
 from urllib.parse import quote
 
 import requests
+
+from scrape_cache import cached_request, clear_cache, get_cache_stats
 
 API = "https://export.arxiv.org/api/query"
 HEADERS = {"User-Agent": "eval-CO2-IA-inventory/1.0 (+recherche empreinte IA)"}
@@ -185,38 +189,62 @@ def parser(xml: str) -> list[dict]:
     return out
 
 
-def chercher(query: str, maxres: int, pages: int, delay: float) -> list[dict]:
+def _fetch_page(url: str, delay: float) -> list[dict]:
+    """Récupère une page unique de résultats depuis arXiv."""
+    for essai in range(3):
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=90)
+        except requests.RequestException as exc:
+            print(f"  ! {exc}", file=sys.stderr)
+            time.sleep(delay)
+            continue
+        finally:
+            time.sleep(delay)
+        if r.status_code == 200:
+            return parser(r.text)
+        print(f"  ! HTTP {r.status_code}, nouvel essai", file=sys.stderr)
+    return []
+
+
+def chercher(query: str, maxres: int, pages: int, delay: float, use_cache: bool = True) -> list[dict]:
     """Trie par pertinence : un tri par date tronquerait les articles fondateurs,
-    tous antérieurs à 2022, sous le flot des préprints récents."""
+    tous antérieurs à 2022, sous le flot des préprints récents.
+    
+    Si use_cache=True, utilise le cache pour éviter de refaire les mêmes requêtes."""
     cats = " OR ".join(f"cat:{c}.*" for c in CATS)
     q = f"({query}) AND ({cats})"
     out: list[dict] = []
+    
+    # Générer un hash pour la requête complète (sans la page)
+    query_hash = cached_request.generate_hash(query, maxres, cats)
+    
+    # Vérifier si toute la requête est en cache
+    if use_cache:
+        cached = cached_request.get_cached("arxiv", query_hash)
+        if cached is not None:
+            print(f"  ✓ Cache trouvé pour la requête: {query[:50]}...", file=sys.stderr)
+            return cached
+    
     for page in range(pages):
         url = (f"{API}?search_query={quote(q)}&start={page * maxres}"
                f"&max_results={maxres}&sortBy=relevance&sortOrder=descending")
-        for essai in range(3):
-            try:
-                r = requests.get(url, headers=HEADERS, timeout=90)
-            except requests.RequestException as exc:
-                print(f"  ! {exc}", file=sys.stderr)
-                time.sleep(delay)
-                continue
-            finally:
-                time.sleep(delay)
-            if r.status_code == 200:
-                lot = parser(r.text)
-                out += lot
-                if len(lot) < maxres:
-                    return out
-                break
-            print(f"  ! HTTP {r.status_code}, nouvel essai", file=sys.stderr)
+        
+        lot = _fetch_page(url, delay)
+        out += lot
+        if len(lot) < maxres:
+            break
+    
+    # Stocker en cache
+    if use_cache and out:
+        cached_request.cache_response("arxiv", query_hash, out)
+    
     return out
 
 
-def collecter(queries, maxres, pages, from_year, delay, min_score, ia_only) -> list[Publi]:
+def collecter(queries, maxres, pages, from_year, delay, min_score, ia_only, use_cache: bool = True) -> list[Publi]:
     trouves: dict[str, Publi] = {}
     for q in queries:
-        docs = chercher(q, maxres, pages, delay)
+        docs = chercher(q, maxres, pages, delay, use_cache=use_cache)
         gardes = 0
         for d in docs:
             if from_year and int(d["annee"]) < from_year:
@@ -288,13 +316,27 @@ def main() -> int:
     ap.add_argument("--ia-only", action="store_true")
     ap.add_argument("--validate", action="store_true")
     ap.add_argument("--outdir", type=Path, default=Path("output"))
+    ap.add_argument("--use-cache", action="store_true", default=True,
+                    help="Utiliser le cache pour éviter de refaire les mêmes requêtes (défaut: oui)")
+    ap.add_argument("--clear-cache", action="store_true",
+                    help="Effacer le cache avant de commencer")
     args = ap.parse_args()
 
+    if args.clear_cache:
+        count = clear_cache("arxiv")
+        print(f"Cache effacé: {count} entrées supprimées", file=sys.stderr)
+
     publis = collecter(args.queries, args.max_results, args.pages,
-                       args.from_year, args.delay, args.min_score, args.ia_only)
+                       args.from_year, args.delay, args.min_score, args.ia_only,
+                       use_cache=args.use_cache)
     ecrire(publis, args.outdir)
     if args.validate:
         valider(publis)
+    
+    if args.use_cache:
+        stats = get_cache_stats()
+        print(f"Cache arXiv: {stats.get('by_source', {}).get('arxiv', 0)} requêtes en cache", file=sys.stderr)
+    
     return 0
 
 

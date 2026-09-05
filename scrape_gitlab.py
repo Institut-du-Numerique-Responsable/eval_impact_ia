@@ -40,6 +40,8 @@ from urllib.parse import quote
 
 import requests
 
+from scrape_cache import cached_request, clear_cache, get_cache_stats
+
 HEADERS = {"User-Agent": "eval-CO2-IA-inventory/1.0 (+recherche outils empreinte IA)"}
 
 # Forges GitLab interrogées. L'API /projects est ouverte en anonyme sur toutes.
@@ -170,10 +172,21 @@ def evaluer(p: dict) -> tuple[int, list[str], bool]:
     return score, axes, ia
 
 
-def chercher(instance: str, query: str, delay: float, token: str | None) -> list[dict]:
+def chercher(instance: str, query: str, delay: float, token: str | None, use_cache: bool = True) -> list[dict]:
     url = (f"https://{instance}/api/v4/projects"
            f"?search={quote(query)}&per_page=100&order_by=star_count&sort=desc"
            f"&simple=false")
+    
+    # Générer un hash pour la requête
+    query_hash = cached_request.generate_hash(instance, query, token)
+    
+    # Vérifier si la requête est en cache
+    if use_cache:
+        cached = cached_request.get_cached("gitlab", query_hash)
+        if cached is not None:
+            print(f"  ✓ Cache trouvé pour {instance} [{query[:30]}...]", file=sys.stderr)
+            return cached
+    
     headers = dict(HEADERS)
     if token:
         headers["PRIVATE-TOKEN"] = token
@@ -191,15 +204,22 @@ def chercher(instance: str, query: str, delay: float, token: str | None) -> list
         data = r.json()
     except ValueError:
         return []
-    return data if isinstance(data, list) else []
+    
+    result = data if isinstance(data, list) else []
+    
+    # Stocker en cache
+    if use_cache and result:
+        cached_request.cache_response("gitlab", query_hash, result)
+    
+    return result
 
 
-def collecter(instances, queries, delay, token, min_score, ia_only) -> list[Projet]:
+def collecter(instances, queries, delay, token, min_score, ia_only, use_cache: bool = True) -> list[Projet]:
     trouves: dict[str, Projet] = {}
     for inst in instances:
         print(f"# {inst}", file=sys.stderr)
         for q in queries:
-            for p in chercher(inst, q, delay, token):
+            for p in chercher(inst, q, delay, token, use_cache=use_cache):
                 score, axes, ia = evaluer(p)
                 if score < min_score or (ia_only and not ia):
                     continue
@@ -269,12 +289,25 @@ def main() -> int:
     ap.add_argument("--min-score", type=int, default=2)
     ap.add_argument("--ia-only", action="store_true")
     ap.add_argument("--outdir", type=Path, default=Path("output"))
+    ap.add_argument("--use-cache", action="store_true", default=True,
+                    help="Utiliser le cache pour éviter de refaire les mêmes requêtes (défaut: oui)")
+    ap.add_argument("--clear-cache", action="store_true",
+                    help="Effacer le cache avant de commencer")
     args = ap.parse_args()
+
+    if args.clear_cache:
+        count = clear_cache("gitlab")
+        print(f"Cache effacé: {count} entrées supprimées", file=sys.stderr)
 
     projets = collecter(args.instances, args.queries, args.delay,
                         os.environ.get("GITLAB_TOKEN"),
-                        args.min_score, args.ia_only)
+                        args.min_score, args.ia_only, use_cache=args.use_cache)
     ecrire(projets, args.outdir)
+    
+    if args.use_cache:
+        stats = get_cache_stats()
+        print(f"Cache GitLab: {stats.get('by_source', {}).get('gitlab', 0)} requêtes en cache", file=sys.stderr)
+    
     return 0
 
 

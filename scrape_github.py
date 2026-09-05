@@ -33,6 +33,8 @@ from pathlib import Path
 
 import requests
 
+from scrape_cache import cached_request, clear_cache, get_cache_stats
+
 API = "https://api.github.com/search/repositories"
 
 # Mêmes intentions de recherche que sur GitLab, réécrites pour la syntaxe GitHub
@@ -157,8 +159,32 @@ def evaluer(r: dict) -> tuple[int, list[str], bool]:
     return score, axes, ia
 
 
+def _fetch_github_page(headers: dict, params: dict, delay: float) -> list[dict]:
+    """Récupère une page unique de résultats depuis GitHub."""
+    try:
+        r = requests.get(API, headers=headers, params=params, timeout=30)
+    except requests.RequestException as exc:
+        print(f"  ! {exc}", file=sys.stderr)
+        time.sleep(delay)
+        return []
+    finally:
+        time.sleep(delay)
+    
+    if r.status_code == 403 and "rate limit" in r.text.lower():
+        reset = int(r.headers.get("x-ratelimit-reset", 0)) - int(time.time())
+        attente = max(reset + 2, 15)
+        print(f"  … rate limit, pause {attente}s", file=sys.stderr)
+        time.sleep(attente)
+        return []
+    if r.status_code != 200:
+        print(f"  ! HTTP {r.status_code}", file=sys.stderr)
+        return []
+    
+    return r.json().get("items", [])
+
+
 def chercher(query: str, pages: int, delay: float, tok: str | None,
-             min_stars: int) -> list[dict]:
+             min_stars: int, use_cache: bool = True) -> list[dict]:
     headers = {"Accept": "application/vnd.github+json",
                "User-Agent": "eval-CO2-IA-inventory/1.0"}
     if tok:
@@ -166,38 +192,38 @@ def chercher(query: str, pages: int, delay: float, tok: str | None,
     q = f"{query} in:name,description,topics"
     if min_stars:
         q += f" stars:>={min_stars}"
+    
+    # Générer un hash pour la requête complète
+    query_hash = cached_request.generate_hash(query, tok, min_stars, pages)
+    
+    # Vérifier si toute la requête est en cache
+    if use_cache:
+        cached = cached_request.get_cached("github", query_hash)
+        if cached is not None:
+            print(f"  ✓ Cache trouvé pour la requête: {query[:50]}...", file=sys.stderr)
+            return cached
+    
     out: list[dict] = []
     for page in range(1, pages + 1):
         params = {"q": q, "sort": "stars", "order": "desc",
                   "per_page": 100, "page": page}
-        try:
-            r = requests.get(API, headers=headers, params=params, timeout=30)
-        except requests.RequestException as exc:
-            print(f"  ! [{query}] {exc}", file=sys.stderr)
-            return out
-        finally:
-            time.sleep(delay)
-        if r.status_code == 403 and "rate limit" in r.text.lower():
-            reset = int(r.headers.get("x-ratelimit-reset", 0)) - int(time.time())
-            attente = max(reset + 2, 15)
-            print(f"  … rate limit, pause {attente}s", file=sys.stderr)
-            time.sleep(attente)
-            continue
-        if r.status_code != 200:
-            print(f"  ! [{query}] HTTP {r.status_code}", file=sys.stderr)
-            return out
-        items = r.json().get("items", [])
+        items = _fetch_github_page(headers, params, delay)
         out += items
         if len(items) < 100:
             break
+    
+    # Stocker en cache
+    if use_cache and out:
+        cached_request.cache_response("github", query_hash, out)
+    
     return out
 
 
 def collecter(queries, pages, delay, tok, min_score, ia_only,
-              min_stars) -> list[Projet]:
+              min_stars, use_cache: bool = True) -> list[Projet]:
     trouves: dict[str, Projet] = {}
     for q in queries:
-        items = chercher(q, pages, delay, tok, min_stars)
+        items = chercher(q, pages, delay, tok, min_stars, use_cache=use_cache)
         gardes = 0
         for r in items:
             score, axes, ia = evaluer(r)
@@ -271,13 +297,27 @@ def main() -> int:
     ap.add_argument("--min-stars", type=int, default=0)
     ap.add_argument("--ia-only", action="store_true")
     ap.add_argument("--outdir", type=Path, default=Path("output"))
+    ap.add_argument("--use-cache", action="store_true", default=True,
+                    help="Utiliser le cache pour éviter de refaire les mêmes requêtes (défaut: oui)")
+    ap.add_argument("--clear-cache", action="store_true",
+                    help="Effacer le cache avant de commencer")
     args = ap.parse_args()
+
+    if args.clear_cache:
+        count = clear_cache("github")
+        print(f"Cache effacé: {count} entrées supprimées", file=sys.stderr)
 
     tok = token()
     print(f"token : {'oui' if tok else 'non (10 req/min)'}", file=sys.stderr)
     projets = collecter(args.queries, args.pages, args.delay, tok,
-                        args.min_score, args.ia_only, args.min_stars)
+                        args.min_score, args.ia_only, args.min_stars,
+                        use_cache=args.use_cache)
     ecrire(projets, args.outdir)
+    
+    if args.use_cache:
+        stats = get_cache_stats()
+        print(f"Cache GitHub: {stats.get('by_source', {}).get('github', 0)} requêtes en cache", file=sys.stderr)
+    
     return 0
 
 
