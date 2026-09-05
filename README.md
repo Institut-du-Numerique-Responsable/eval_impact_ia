@@ -7,7 +7,7 @@ indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
 
 - [A. Références documentaires](#a-références-documentaires) : la méthode, les ordres de grandeur, le cadrage. Publications HAL.
 - [B. Ressources logicielles](#b-ressources-logicielles) : les briques réutilisables. Dépôts GitHub et GitLab.
-- [C. Structure de calcul qui en découle](#c-structure-de-calcul-qui-en-découle) : la formule et les sept points de vigilance.
+- [C. Proposition de méthodologie](#c-proposition-de-méthodologie) : la synthèse de calcul et les sept points de vigilance.
 
 ---
 
@@ -184,7 +184,9 @@ confondus. La colonne étoiles donne un ordre de grandeur d'adoption.
 
 ---
 
-## C. Structure de calcul qui en découle
+## C. Proposition de méthodologie
+
+Synthèse de calcul tirée des parties A et B.
 
 ```
 Impact(usage IA) =
