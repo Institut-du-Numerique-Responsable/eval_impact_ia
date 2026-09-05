@@ -14,7 +14,7 @@ indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
 - [A. Références documentaires](#a-références-documentaires) : 79 publications HAL et arXiv. La méthode, les ordres de grandeur, le cadrage.
 - [B. Ressources logicielles](#b-ressources-logicielles) : 87 dépôts GitHub/GitLab/Hugging Face. Les briques réutilisables.
 - [C. Proposition de méthodologie](#c-proposition-de-méthodologie) : synthèse de calcul et sept points de vigilance.
-- [SOURCES.md](SOURCES.md) : ce qui a été balayé, comment, et ce qui a été écarté.
+- [SOURCES.md](SOURCES.md) : **la liste des sources analysées** — ce qui a été balayé, comment, et ce qui a été écarté.
 - [D. Où chercher d'autres sources](#d-où-chercher-dautres-sources) :
   - [D.1 Rapports annuels](#d1-rapports-de-référence-mis-à-jour-chaque-année) ·
   - [D.2 Laboratoires](#d2-laboratoires-qui-publient-régulièrement) ·
