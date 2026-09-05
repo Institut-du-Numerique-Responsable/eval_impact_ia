@@ -1,4 +1,4 @@
-# eval_CO2_IA — base de code & de documents pour un calculateur d'impact environnemental de l'IA
+# base de ressources & de documents pour un calculateur d'impact environnemental de l'IA
 
 Objectif : réunir **le code existant** (GitLab en priorité) et **la littérature**
 (HAL) nécessaires pour apprendre à construire un calculateur d'impact
