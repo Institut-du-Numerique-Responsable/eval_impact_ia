@@ -9,13 +9,26 @@
 
 > **TL;DR** : Ce dépôt rassemble **79 publications** (HAL/arXiv/revues) et **87 outils open source** pour calculer l'impact environnemental de l'IA (carbone, énergie, eau, ADPe). Méthodologie ACV complète pour les LLM, avec des outils comme CodeCarbon, EcoLogits, Scaphandre et perf-sentinel.
 
-## À propos de l'Institut du Numérique Responsable
+## À propos du projet
 
-Ce dépôt est maintenu par **[l'Institut du Numérique Responsable](https://institutnr.org)** (INR), une organisation dédiée à la promotion d'un numérique **éco-responsable, sobre et durable** en France.
+**eval_impact_ia** est une **base de connaissances open source** développée et maintenue par **[l'Institut du Numérique Responsable](https://institutnr.org)** (INR). Ce projet a pour objectif de **centraliser, organiser et diffuser** les ressources nécessaires à la **mesure et réduction de l'impact environnemental de l'IA générative**.
 
-🔹 **Notre mission** : Accompagner les acteurs du numérique dans la réduction de leur empreinte environnementale.
-🔹 **Nos valeurs** : Transparence, ouverture, collaboration, impact mesurable.
-🔹 **Contact** : [contact@institutnr.org](mailto:contact@institutnr.org) | [@INR_Numerique](https://twitter.com/INR_Numerique)
+### 🎯 Objectifs du projet
+
+- **Rassembler** : **79 publications scientifiques** (HAL, arXiv, revues à comité de lecture) et **87 outils logiciels open source** (GitHub, GitLab, Hugging Face) sur le calcul de l'impact environnemental de l'IA.
+- **Structurer** : Classer les ressources par rôle dans un calculateur (méthode, mesure, estimation, normalisation) pour faciliter leur adoption.
+- **Documenter** : Fournir une méthodologie claire, des exemples d'usage, et une transparence totale sur les sources.
+- **Collaborer** : Créer un référentiel commun pour la communauté francophone et internationale travaillant sur l'IA durable.
+
+### 🏢 Porté par l'Institut du Numérique Responsable
+
+L'[**INR**](https://institutnr.org) est une organisation française engagée pour un **numérique éco-conçu et sobre**. Son rôle dans ce projet :
+
+- **Garantir la qualité** des ressources référencées (validation des sources, vérification des liens).
+- **Maintenir l'actualité** du dépôt (veille régulière, mises à jour mensuelles).
+- **Animer la communauté** autour des enjeux d'impact environnemental de l'IA.
+
+📧 **Contact** : [contact@institutnr.org](mailto:contact@institutnr.org) | 🐦 [@INR_Numerique](https://twitter.com/INR_Numerique)
 
 ## Pourquoi ce dépôt ?
 
