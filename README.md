@@ -1,8 +1,8 @@
 # base de ressources & de documents pour un calculateur d'impact environnemental de l'IA
 
 [![Licence CC0 1.0](https://img.shields.io/badge/licence-CC0_1.0-6a9955?style=flat-square)](LICENSE)
-[![56 références](https://img.shields.io/badge/références-56_publications-2c6e9b?style=flat-square)](#a-références-documentaires)
-[![63 ressources](https://img.shields.io/badge/ressources-63_ressources-2c6e9b?style=flat-square)](#b-ressources-logicielles)
+[![79 références](https://img.shields.io/badge/références-79_publications-2c6e9b?style=flat-square)](#a-références-documentaires)
+[![87 ressources](https://img.shields.io/badge/ressources-87_ressources-2c6e9b?style=flat-square)](#b-ressources-logicielles)
 [![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
 [![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
 
@@ -11,11 +11,20 @@ une méthode et des briques de code. Cette page rassemble les deux, pour quatre
 indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
 (gSbe).
 
-- [A. Références documentaires](#a-références-documentaires) : la méthode, les ordres de grandeur, le cadrage. Publications HAL.
-- [B. Ressources logicielles](#b-ressources-logicielles) : les briques réutilisables. Dépôts GitHub et GitLab.
-- [C. Proposition de méthodologie](#c-proposition-de-méthodologie) : la synthèse de calcul et les sept points de vigilance.
+- [A. Références documentaires](#a-références-documentaires) : 79 publications HAL et arXiv. La méthode, les ordres de grandeur, le cadrage.
+- [B. Ressources logicielles](#b-ressources-logicielles) : 87 dépôts GitHub/GitLab/Hugging Face. Les briques réutilisables.
+- [C. Proposition de méthodologie](#c-proposition-de-méthodologie) : synthèse de calcul et sept points de vigilance.
 - [SOURCES.md](SOURCES.md) : ce qui a été balayé, comment, et ce qui a été écarté.
-- [D. Où chercher d'autres sources](#d-où-chercher-dautres-sources) : laboratoires, portails et rapports de référence.
+- [D. Où chercher d'autres sources](#d-où-chercher-dautres-sources) :
+  - [D.1 Rapports annuels](#d1-rapports-de-référence-mis-à-jour-chaque-année) ·
+  - [D.2 Laboratoires](#d2-laboratoires-qui-publient-régulièrement) ·
+  - [D.3 Réseaux](#d3-réseaux-et-portails-à-interroger-directement) ·
+  - [D.4 Opérateurs de datacenters](#d4-rapports-des-opérateurs-de-datacenters) ·
+  - [D.5 Bases de données](#d5-bases-de-données-et-facteurs-démission) ·
+  - [D.6 Événements et formations](#d6-événements-formations-et-médias-spécialisés) ·
+  - [D.7 Veille prospective](#d7-veille-et-analyse-prospective) ·
+  - [D.8 Sécurité](#d8-sécurité-et-conformité) ·
+  - [D.9 Communautaires](#d9-ressources-communautaires-et-encyclopédiques)
 
 ---
 
@@ -51,11 +60,14 @@ francophone, arXiv pour le reste.
 | [Adaptive Inference for Cost-Efficient Deep Neural Networks](https://hal.science/tel-05504891v2) | 2026 | Thèse | Inférence adaptative : moduler le coût selon la difficulté de l'entrée. |
 | [A Testbed Framework for Estimating the Environmental Impact of Agentic AI Workflows in HPC](https://hal.science/hal-05594455v1) | 2026 | Communication | Traite les **workflows agentiques** : plusieurs appels chaînés, coût cumulé. |
 | [Heuristique, CSP ou LLM ? Étude comparative du coût énergétique du placement de services](https://hal.science/hal-05713191v1) | 2026 | Communication | Compare le coût énergétique de l'IA à celui d'une alternative algorithmique classique. |
+| [Évaluation des impacts environnementaux et sociétaux de l'IA générative](https://inria.hal.science/hal-04346102v2) | 2025 | Rapport | Analyse Inria des impacts environnementaux et sociétaux de l'IA générative. |
+| [Contribution à l'évaluation de l'impact environnemental des modèles de langage](https://theses.hal.science/tel-05369950) | 2025 | Thèse | Travail doctoral sur l'évaluation des impacts des modèles de langage. |
 | [The Carbon Cost of Intelligence: A Domain-Specific Framework for Measuring AI Energy and Emissions](https://doi.org/10.3390/en19030642) | 2026 | Article (Energies) | Segmente l'empreinte par type de charge de travail, avec des mesures empiriques sur GPT-4. Utile pour raisonner par usage plutôt que par modèle. |
 | [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288) | 2023 | Rapport technique | Un des rares rapports de modèle à documenter matériel, durée de pré-entraînement et estimation carbone. Le niveau de transparence à exiger. |
 | [From Words to Watts: Benchmarking the Energy Costs of Large Language Model Inference](https://arxiv.org/abs/2310.03003) | 2023 | Préprint | Le MIT Lincoln Laboratory mesure l'énergie d'inférence des LLM sur supercalculateur, par taille de modèle et par configuration. |
 | [Power Hungry Processing: Watts Driving the Cost of AI Deployment?](https://arxiv.org/abs/2311.16863) | 2023 | Préprint | Hugging Face compare l'énergie d'inférence selon la tâche : la génération d'image coûte des ordres de grandeur de plus que la classification. |
 | [Great Power, Great Responsibility: Recommendations for Reducing Energy for Training Language Models](https://arxiv.org/abs/2205.09646) | 2022 | Préprint | Le MIT chiffre les gains du bridage de puissance des GPU et de l'arrêt anticipé d'entraînement. |
+| [Sustainable AI: Balancing Innovation and Environmental Impact](https://arxiv.org/abs/2506.10989) | 2025 | Préprint | Analyse des enjeux de durabilité de l'IA générative et des trade-offs entre innovation et impact environnemental. |
 | [Carbon Emissions and Large Neural Network Training](https://arxiv.org/abs/2104.10350) | 2021 | Préprint | Google et Berkeley posent les facteurs qui font varier l'empreinte d'un facteur 100 : modèle, matériel, datacenter, mix électrique. |
 | [Carbontracker: Tracking and Predicting the Carbon Footprint of Training Deep Learning Models](https://arxiv.org/abs/2007.03051) | 2020 | Préprint | L'Université de Copenhague décrit la méthode de prédiction implémentée dans `carbontracker` (partie B.1). |
 | [Quantifying the Carbon Emissions of Machine Learning](https://arxiv.org/abs/1910.09700) | 2019 | Préprint | L'article fondateur du calculateur ML CO2 Impact (partie B.1). La formule minimale, à connaître avant de la complexifier. |
@@ -104,6 +116,8 @@ francophone, arXiv pour le reste.
 | [Cross-Cultural Differences in Perceptions of the Environmental Impact of Generative AI](https://hal.science/hal-05630387v1) | 2026 | Communication | Variations culturelles de cette perception. |
 | [TD programmation — empreinte environnementale du numérique](https://hal.science/hal-05017574v1) | 2025 | Support de cours | Exercices prêts à l'emploi. |
 | [Les ressources pour enseigner le numérique responsable en IUT](https://hal.science/hal-05632185v1) | 2026 | Chapitre | Panorama des ressources pédagogiques. |
+| [L'IA générative est-elle soutenable ? Le vrai coût écologique d'un prompt](https://theconversation.com/lia-generative-est-elle-soutenable-le-vrai-cout-ecologique-dun-prompt-269432) | 2025 | Article | Analyse grand public des coûts environnementaux des prompts. |
+| [Enquête : derrière l'IA, les travailleurs précaires des pays du Sud](https://theconversation.com/enquete-derriere-lia-les-travailleurs-precaires-des-pays-du-sud-201503) | 2025 | Article | Enquête sur les coûts sociaux cachés de l'IA. |
 
 ---
 
@@ -125,6 +139,7 @@ confondus.
 | [Helmholtz-AI-Energy/perun](https://github.com/Helmholtz-AI-Energy/perun) | GitHub | Énergie d'applications Python, orienté HPC / MPI multi-nœuds. |
 | [HewlettPackard/sustain-cluster](https://github.com/HewlettPackard/sustain-cluster) | GitHub | Environnement Gymnasium pour benchmarker l'ordonnancement durable de clusters IA. |
 | [huggingface/AIEnergyScore](https://github.com/huggingface/AIEnergyScore) | GitHub | **Notation comparable** de l'efficacité énergétique des modèles : méthodologie de benchmark standardisée. |
+| [genai-impact/ecologits-calculator](https://huggingface.co/spaces/genai-impact/ecologits-calculator) | Hugging Face Space | Calculateur interactif pour estimer l'empreinte carbone des requêtes LLM (implémentation alternative d'EcoLogits). |
 | [Ren-Research/Making-AI-Less-Thirsty](https://github.com/Ren-Research/Making-AI-Less-Thirsty) | GitHub | **Empreinte eau de l'IA** : refroidissement et eau du mix électrique. La principale source sur cet axe. |
 | [ecs-lab/llm-inference-energy-benchmark](https://gitlab.com/ecs-lab/llm-inference-energy-benchmark) | GitLab | **Jeu de mesures** : puissance, traces et débit de 13 LLM (1,3B→9B) sur H100 / TensorRT-LLM. De quoi **calibrer et valider** un modèle analytique (papier *SweetSpot*, ICPE 2026). |
 | [inria/magnet/declearn/energy](https://gitlab.inria.fr/magnet/declearn/energy) | GitLab INRIA | Consommation d'un framework d'apprentissage fédéré. |
@@ -177,6 +192,7 @@ confondus.
 |---|---|---|
 | [Green-Software-Foundation/sci](https://github.com/Green-Software-Foundation/sci) | GitHub | **Software Carbon Intensity** : spécification normative, `SCI = (E × I + M) / R`. Cadre de référence pour structurer un calculateur. |
 | [Green-Software-Foundation/if](https://github.com/Green-Software-Foundation/if) | GitHub | Impact Framework : pipeline déclaratif (YAML) composé de plugins. L'architecture dont s'inspirer pour l'outil à construire. |
+| [Comparia](https://www.comparia.beta.gouv.fr/) | Plateforme gouvernementale | Outil de comparaison des impacts environnementaux des services numériques (en développement). |
 
 ### B.6 Intégrer à la CI/CD et à l'ordonnancement
 
@@ -214,6 +230,38 @@ confondus.
 | [schaDev/GreenCoding-measuring-tools](https://github.com/schaDev/GreenCoding-measuring-tools) | GitHub | Panorama comparatif des outils de mesure énergie/CO₂ des logiciels. |
 | [in2p3/ecoinfo/bonnes-pratiques](https://gitlab.in2p3.fr/ecoinfo/bonnes-pratiques) | GitLab IN2P3 | Guide EcoInfo (CNRS) de bonnes pratiques pour l'informatique de l'ESR. |
 | [aac-ademe](https://gitlab.com/aac-ademe) | GitLab | Groupe complet des appels à communs ADEME, dont `datacenter-footprint`. |
+
+### B.9 Ressources EcoInfo (CNRS)
+
+Ressources issues du site [EcoInfo](https://ecoinfo.cnrs.fr/), le réseau français de l'informatique éco-responsable.
+
+| Ressource | Type | Date | Catégories | Apport |
+|---|---|---|---|---|
+| [Impact environnemental de l'IA](https://ecoinfo.cnrs.fr/2019/10/01/impact-environnemental-de-lia/) | Article | 2019 | IA | Analyse complète des impacts environnementaux de l'IA. |
+| [Consommation énergétique de l'utilisation de l'IA](https://ecoinfo.cnrs.fr/2021/06/12/consommation-energetique-de-lutilisation-de-lia/) | Article | 2021 | IA, Energie, Agir | Focus sur la consommation énergétique en phase d'inférence et d'utilisation. |
+| [Les impacts sociaux de l'IA](https://ecoinfo.cnrs.fr/2022/03/15/impacts-sociaux-de-lia/) | Article | 2022 | IA, Aspects sociaux | Analyse des enjeux sociaux liés à l'IA. |
+| [Évaluer les impacts d'un projet d'IA](https://ecoinfo.cnrs.fr/2022/12/14/evaluer-les-impacts-dun-projet-dia/) | Article | 2022 | IA, Bonnes pratiques | Méthodologie pour évaluer l'impact d'un projet d'IA. |
+| [BGES_DC](https://ecoinfo.cnrs.fr/2026/08/28/bges_dc/) | Ressource | 2026 | Datacentres | Bilan Gaz à Effet de Serre des Datacentres. |
+| [Le vrai coût énergétique du numérique](https://ecoinfo.cnrs.fr/2022/10/21/le-vrai-cout-energetique-du-numerique/) | Article | 2022 | Datacentres, Energie | Analyse approfondie des coûts énergétiques réels. |
+| [Guide des bonnes pratiques du Code de Conduite européen sur les Datacentres](https://ecoinfo.cnrs.fr/2020/05/19/guide-des-bonnes-pratiques-du-code-de-conduite-europeen-sur-les-datacentres/) | Guide | 2020 | Datacentres | Recommandations pour des datacentres éco-responsables. |
+| [Mesurer la consommation électrique d'un serveur](https://ecoinfo.cnrs.fr/2019/09/13/mesurer-la-consommation-electrique-dun-serveur/) | Guide | 2019 | Datacentres, Mesures | Méthodes de mesure de la consommation électrique. |
+| [Plaquette « Je code : les bonnes pratiques en éco-conception](https://ecoinfo.cnrs.fr/2026/03/05/plaquette-je-code-les-bonnes-pratiques-en-eco-conception-de-service-numerique-a-destination-des-developpeurs-de-logiciels/) | Guide | 2026 | Ecoconception | Bonnes pratiques pour les développeurs. |
+| [Formation : Impact environnemental du numérique](https://ecoinfo.cnrs.fr/2020/06/23/formation-2020-impact-environnemental-du-numerique-comprendre-et-agir/) | Formation | 2020 | ACV, Ecoconception | Formation complète sur l'impact environnemental du numérique. |
+| [ANF 2023 : Impacts environnementaux du numérique — les 8R](https://ecoinfo.cnrs.fr/2023/05/04/anf-2023-impacts-environnementaux-du-numerique-les-8r/) | Atelier | 2023 | Agir | Méthode des 8R pour réduire l'impact environnemental. |
+| [MOOC : Impacts environnementaux du numérique](https://ecoinfo.cnrs.fr/2022/01/11/mooc-impacts-environnementaux-du-numerique/) | MOOC | 2022 | Agir | Formation en ligne sur les impacts environnementaux. |
+| [Datacentre éco-responsable à l'université Lille 1](https://ecoinfo.cnrs.fr/2015/12/23/datacentre-eco-responsable-a-luniversite-de-lilles/) | Retour d'expérience | 2015 | Datacentres | Exemple concret de datacentre éco-responsable. |
+| [Froggy: supercalculateur refroidi à l'eau tiède](https://ecoinfo.cnrs.fr/2014/09/10/froggy-un-supercalculateur-refroidi-avec-de-leau-tiede-universite-de-grenoble/) | Retour d'expérience | 2014 | Datacentres | Innovation en refroidissement de datacentre. |
+| [Panorama des systèmes de refroidissement en Datacentres](https://ecoinfo.cnrs.fr/2009/10/08/panorama-des-principaux-systemes-de-refroidissement-en-datacentres/) | Guide | 2009 | Datacentres | Comparatif des solutions de refroidissement. |
+| [Le Free Cooling](https://ecoinfo.cnrs.fr/2009/10/08/le-free-cooling/) | Guide | 2009 | Datacentres | Technique de refroidissement gratuit. |
+| [Guide des bonnes pratiques pour améliorer l'efficience énergétique](https://ecoinfo.cnrs.fr/2009/09/15/datacentres-guide-des-bonnes-pratiques-pour-ameliorer-leur-efficience-energetique/) | Guide | 2009 | Datacentres, Energie | Recommandations pour l'optimisation énergétique. |
+| [« Carbon neutralities » of ICT companies](https://ecoinfo.cnrs.fr/2022/07/05/carbon-neutralities-of-ict-companies/) | Article | 2022 | Données, Energie | Analyse des claims de neutralité carbone des entreprises IT. |
+| [Les « neutralités carbone » des entreprises du numérique](https://ecoinfo.cnrs.fr/2022/03/17/les-neutralites-carbone-des-entreprises-du-numerique/) | Article | 2022 | Données, Energie | Version française de l'analyse ci-dessus. |
+| [Références ACV PC](https://ecoinfo.cnrs.fr/2010/04/12/references-acv-pc/) | Base de données | 2010 | ACV | Références pour les ACV des PCs. |
+| [Calculer l'empreinte carbone d'1 heure de calcul sur un cœur](https://ecoinfo.cnrs.fr/2020/04/24/calculer-lempreinte-carbone-d1-heure-de-calcul-sur-un-coeur/) | Guide | 2020 | Datacentres, Energie, Mesures | Méthodologie de calcul pratique. |
+| [Code de Conduite européen sur les Datacentres](https://ecoinfo.cnrs.fr/2019/05/06/code-de-conduite-europeen-sur-les-datacentres/) | Guide | 2019 | Datacentres | Cadre européen pour les datacentres durables. |
+| [Audit de salles informatiques (datacentre)](https://ecoinfo.cnrs.fr/2019/02/12/audit-de-salles-informatiques-datacentre/) | Guide | 2019 | Datacentres | Méthodologie d'audit énergétique. |
+| [Eco-conception](https://ecoinfo.cnrs.fr/2019/02/19/eco-conception/) | Guide | 2019 | Ecoconception | Principes fondamentaux de l'éco-conception. |
+| [Agir vers la sobriété numérique](https://ecoinfo.cnrs.fr/2021/03/01/agir-vers-la-sobriete-numerique/) | Guide | 2021 | Agir | Stratégies pour réduire l'empreinte numérique. |
 
 ---
 ## C. Proposition de méthodologie
@@ -268,6 +316,8 @@ recherche.
 | **EPFL et Université de Lausanne** | Empreinte du numérique à l'échelle d'un pays et d'un campus, sobriété numérique. L'étude suisse 2025 associe EPFL, UNIL et l'IMD. | [Recherche et durabilité EPFL](https://www.epfl.ch/about/sustainability/research-innovation/) · [Sobriété numérique](https://actu.epfl.ch/news/la-sobriete-numerique-passe-au-rang-des-priorite-2/) · [IGD, UNIL](https://www.unil.ch/igd/home.html) |
 | **Ren Research Group** | L'empreinte eau de l'IA, angle le moins couvert ailleurs. Code et données de *Making AI Less Thirsty*. | [Dépôts](https://github.com/Ren-Research) · [Article](https://arxiv.org/abs/2304.03271) |
 | **Inria, IRISA, LIG** | Calcul économe, ordonnancement carbone, métrologie sur Grid'5000. Plus de 500 dépôts HAL pour l'IRISA, 200 pour le LIG. | [Portail HAL Inria](https://inria.hal.science/) |
+| **CIS CNRS** | Centre Informatique et Société du CNRS. Travaille sur les enjeux sociétaux du numérique. | [Presentation GDR CIS](https://cis.cnrs.fr/presentation-gdr/) |
+| **Sorbonne Université** | Travaux sur l'IA et la durabilité, dont l'impact environnemental. | [Dossier IA et société](https://www.sorbonne-universite.fr/dossiers/intelligence-artificielle/lia-dans-leducation-entre-opportunites-et-defis) |
 
 ### D.3 Réseaux et portails à interroger directement
 
@@ -304,3 +354,39 @@ Scope 3 varie d'un opérateur à l'autre.
 | **Base Empreinte, ADEME** | Facteurs d'émission et jeux de données ACV publics, côté français. | [base-empreinte.ademe.fr](https://base-empreinte.ademe.fr/) |
 | **Boavizta** | Impacts de fabrication des équipements, en accès libre et interrogeable par API (partie B.3). | [Données](https://github.com/Boavizta/environmental-footprint-data) |
 | **Electricity Maps** | Intensité carbone du réseau, horaire et par zone (partie B.4). | [Dépôt](https://github.com/electricitymaps/electricitymaps-contrib) |
+
+### D.6 Événements, formations et médias spécialisés
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **IA4Dev 2025** | Conférence francophone sur l'IA durable, avec des retours d'expérience et des ateliers pratiques. | [ia4dev-2025.sciencesconf.org](https://ia4dev-2025.sciencesconf.org/resource/page/id/1) |
+| **MOOC Fun-MOOC : IA et Société** | Cours en ligne ouvert sur les enjeux sociétaux et environnementaux de l'IA, accessible à tous. | [fun-mooc.fr/IA-et-société](https://www.fun-mooc.fr/fr/cours/intelligence-artificielle-et-societe/) |
+| **Canal U : Formation ENVOL** | Formation vidéo sur l'IA en aide au développement, incluant des modules sur l'impact environnemental. | [canal-u.tv/ENVOl](https://www.canal-u.tv/chaines/devlog/formation-envol-l-intelligence-artificielle-en-aide-au-developpement) |
+| **RAG'AR'ENN** | Réseau breton pour une IA responsable, ressources et événements locaux. | [ragarenn.eskemm-numerique.fr](https://ragarenn.eskemm-numerique.fr/index.html) |
+| **Emmy, plateforme vidéo CNRS** | Chaîne dédiée aux conférences et formation sur l'IA et l'environnement. | [emmy.cnrs.fr](https://emmy.cnrs.fr/) |
+
+### D.7 Veille et analyse prospective
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **CaFeIA** | Blog collaboratif sur l'IA frugale et responsable, analyses techniques et retours terrain. | [cafeia.org](https://cafeia.org/) |
+| **NMN.gl** | Blog technique sur l'IA et l'apprentissage, avec des analyses sur l'efficacité énergétique. | [nmn.gl/blog/ai-and-learning](https://nmn.gl/blog/ai-and-learning) |
+| **Le Grand Continent** | Think tank européen, analyses géopolitiques et technologiques incluant l'IA et ses impacts. | [legrandcontinent.eu/IA-MIT](https://legrandcontinent.eu/fr/2025/06/19/chatgpt-cerveau-etude-mit/) |
+| **The Meta News** | Actualités sur l'IA en Europe, couverture des initiatives de recherche responsable. | [themeta.news/mistral-recherche](https://themeta.news/mistral-gagnant-pour-la-recherche/) |
+| **IANA Data** | Réflexion sur l'éthique et la société, incluant l'impact cognitif et environnemental des outils d'IA. | [iana-data.org/éthique-IA](https://www.iana-data.org/ethique-et-societe/843-lutilisation-exageree-doutils-dia-altere-les-capacites-cognitives-humaines.html) |
+| **DataCamp : Mistral Vibe 2.0** | Article technique sur les outils d'IA générative et leur empreinte, cas d'usage concrets. | [datacamp.com/fr/blog/mistral-vibe-2-0](https://www.datacamp.com/fr/blog/mistral-vibe-2-0) |
+
+### D.8 Sécurité et conformité
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **ANSSI : Assistants de programmation IA** | Recommandations de sécurité pour les outils d'IA générative, bonnes pratiques et risques. | [cyber.gouv.fr/assistants-IA](https://cyber.gouv.fr/actualites/lanssi-et-le-bsi-publient-leurs-recommandations-de-securite-concernant-les-assistants-de-programmationbasés-sur-lia/) |
+| **ANSSI : Systèmes d'IA générative** | Cadre de sécurité pour les systèmes d'IA, incluant l'évaluation des risques environnementaux. | [cyber.gouv.fr/recommandations-IA](https://cyber.gouv.fr/publications/recommandations-de-securite-pour-un-systeme-dia-generative) |
+| **CNIL : IA et RGPD** | Recommandations pour une innovation responsable, incluant la dimension environnementale. | [cnil.fr/IA-RGPD](https://www.cnil.fr/fr/ia-et-rgpd-la-cnil-publie-ses-nouvelles-recommandations-pour-accompagner-une-innovation-responsable) |
+| **Ministère de l'Économie** | Guide RAG v4 interactif sur l'IA générative, incluant les aspects de durabilité. | [entreprises.gouv.fr/guide-RAG](https://www.entreprises.gouv.fr/files/files/Publications/2024/Guides/20241127-bro-guide-ragv4-interactif.pdf) |
+
+### D.9 Ressources communautaires et encyclopédiques
+
+| Source | Ce qu'on y trouve | Accès |
+|---|---|---|
+| **Wikipédia : Vibe Coding** | Page encyclopédique sur le *vibe coding*, contexte historique et impact sur les pratiques de développement. | [fr.wikipedia.org/wiki/Vibe_coding](https://fr.wikipedia.org/wiki/Vibe_coding) |
