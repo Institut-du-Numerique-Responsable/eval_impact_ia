@@ -5,8 +5,17 @@
 [![87 ressources](https://img.shields.io/badge/ressources-87_ressources-2c6e9b?style=flat-square)](#b-ressources-logicielles)
 [![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
 [![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
+[![Maintenu par INR](https://img.shields.io/badge/maintenu%20par-INR-0055a4?style=flat-square&logo=organization)](https://institutnr.org)
 
 > **TL;DR** : Ce dépôt rassemble **79 publications** (HAL/arXiv/revues) et **87 outils open source** pour calculer l'impact environnemental de l'IA (carbone, énergie, eau, ADPe). Méthodologie ACV complète pour les LLM, avec des outils comme CodeCarbon, EcoLogits, Scaphandre et perf-sentinel.
+
+## À propos de l'Institut du Numérique Responsable
+
+Ce dépôt est maintenu par **[l'Institut du Numérique Responsable](https://institutnr.org)** (INR), une organisation dédiée à la promotion d'un numérique **éco-responsable, sobre et durable** en France.
+
+🔹 **Notre mission** : Accompagner les acteurs du numérique dans la réduction de leur empreinte environnementale.
+🔹 **Nos valeurs** : Transparence, ouverture, collaboration, impact mesurable.
+🔹 **Contact** : [contact@institutnr.org](mailto:contact@institutnr.org) | [@INR_Numerique](https://twitter.com/INR_Numerique)
 
 ## Pourquoi ce dépôt ?
 
@@ -15,6 +24,35 @@ L'IA générative a un **impact environnemental mal mesuré** : entraînement, i
 - **La méthode** : une synthèse de calcul pour 4 indicateurs (gCO₂e, kWh, L, gSbe) issue de 79 publications scientifiques.
 - **Les outils** : 87 briques de code open source pour mesurer, estimer, normaliser.
 - **La transparence** : chaque référence et ressource est sourcée, datée, et classée par rôle dans le calculateur.
+
+---
+
+## 🎯 Cas d'usage
+
+### Pour les chercheurs
+- **Trouver des publications** sur l'ACV des LLM → [Section A.1](#a1-acv-complète-dun-modèle)
+- **Comparer des méthodologies** → [Section A.2](#a2-énergie-dentraînement-et-dinférence)
+- **Étudier l'infrastructure** → [Section A.3](#a3-infrastructure-datacenter-hpc-stockage)
+- **Analyser les politiques publiques** → [Section A.4](#a4-cadrage-politiques-publiques-effet-rebond)
+- **Citer des sources vérifiées** → [SOURCES.md](SOURCES.md)
+
+### Pour les ingénieurs et développeurs
+- **Mesurer l'impact d'un modèle** → [Section B.1](#b1-estimer-limpact-dun-modèle-dia)
+- **Mesurer la consommation électrique** → [Section B.2](#b2-mesurer-la-consommation-électrique)
+- **Estimer les impacts de fabrication** → [Section B.3](#b3-estimer-les-impacts-de-fabrication-acv-matérielle)
+- **Convertir en carbone** → [Section B.4](#b4-convertir-en-carbone-intensité-électrique-et-cloud)
+- **Normaliser le calcul** → [Section B.5](#b5-normaliser-le-calcul)
+- **Intégrer à la CI/CD** → [Section B.6](#b6-intégrer-à-la-cicd-et-à-lordonnancement)
+- **Mesurer côté service numérique** → [Section B.7](#b7-mesurer-côté-service-numérique)
+- **Utiliser des communs** → [Section B.8](#b8-communs-guides-et-listes-curées)
+- **Explorer les ressources EcoInfo** → [Section B.9](#b9-ressources-ecoinfo-cnrs)
+
+### Pour les décideurs et responsables
+- **Comprendre les enjeux** → [Section A.4](#a4-cadrage-politiques-publiques-effet-rebond)
+- **Trouver des rapports institutionnels** → [Section D.1](#d1-rapports-de-référence-mis-à-jour-chaque-année)
+- **Identifier des laboratoires** → [Section D.2](#d2-laboratoires-qui-publient-régulièrement)
+- **Accéder à des réseaux** → [Section D.3](#d3-réseaux-et-portails-à-interroger-directement)
+- **Consulter des bases de données** → [Section D.5](#d5-bases-de-données-et-facteurs-démission)
 
 ---
 
