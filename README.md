@@ -9,7 +9,6 @@ littérature qui donne la méthode et le code que vous pouvez réutiliser.
 - [A. Références documentaires](#a-références-documentaires) : méthodes, ordres de grandeur, cadrage
 - [B. Ressources logicielles](#b-ressources-logicielles) : briques de code réutilisables
 - [C. Structure de calcul qui en découle](#c-structure-de-calcul-qui-en-découle)
-- [D. Angles morts](#d-angles-morts)
 
 HAL publie la méthodologie et les ordres de grandeur validés. GitHub héberge les briques que tout le monde
 utilise : CodeCarbon, EcoLogits, Boavizta, Scaphandre, Kepler. GitLab abrite la
@@ -214,13 +213,3 @@ Sept points de vigilance, avec les sections qui les documentent :
 | 6 | **Séparer mesure et estimation.** Mesurez quand vous avez la machine, modélisez quand vous n'avez qu'une API. | A.2, B.1, B.2 |
 | 7 | **S'aligner sur une spec existante.** Le cadre est déjà écrit. | B.5 |
 
----
-
-## D. Angles morts
-
-| Angle mort | Constat | Piste |
-|---|---|---|
-| **Littérature anglophone** | HAL indexe surtout la recherche francophone. | Compléter par arXiv et ACM DL (*SweetSpot*, *LLMCarbon*, *Sustainable AI*). |
-| **Eau** | Les sources chiffrées manquent, hors refroidissement datacenter. | Partir de *Making AI Less Thirsty* (B.1) et de l'eau du mix électrique. |
-| **Inférence à l'échelle** | La littérature traite surtout l'entraînement. En production, l'inférence domine l'impact cumulé. | Calibrer sur le jeu de mesures `llm-inference-energy-benchmark` (B.1). |
-| **Fabrication des GPU** | Les inventaires de cycle de vie publics manquent. | *More than carbon* sur A100 (A.1) et BoaviztAPI (B.3). |
