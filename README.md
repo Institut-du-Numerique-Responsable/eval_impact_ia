@@ -1,19 +1,13 @@
 # base de ressources & de documents pour un calculateur d'impact environnemental de l'IA
 
-Vous voulez calculer l'impact environnemental d'un usage d'IA : carbone (gCO₂e),
-énergie (kWh), eau (L), ressources abiotiques (gSbe). Cette page rassemble la
-littérature qui donne la méthode et le code que vous pouvez réutiliser.
+Construire un calculateur d'impact environnemental de l'IA demande deux choses :
+une méthode et des briques de code. Cette page rassemble les deux, pour quatre
+indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
+(gSbe).
 
-**Sommaire**
-
-- [A. Références documentaires](#a-références-documentaires) : méthodes, ordres de grandeur, cadrage
-- [B. Ressources logicielles](#b-ressources-logicielles) : briques de code réutilisables
-- [C. Structure de calcul qui en découle](#c-structure-de-calcul-qui-en-découle)
-
-HAL publie la méthodologie et les ordres de grandeur validés. GitHub héberge les briques que tout le monde
-utilise : CodeCarbon, EcoLogits, Boavizta, Scaphandre, Kepler. GitLab abrite la
-recherche publique française (INRIA, IN2P3/CNRS, IRIT) et la coordination
-ADEME.
+- [A. Références documentaires](#a-références-documentaires) : la méthode, les ordres de grandeur, le cadrage. Publications HAL.
+- [B. Ressources logicielles](#b-ressources-logicielles) : les briques réutilisables. Dépôts GitHub et GitLab.
+- [C. Structure de calcul qui en découle](#c-structure-de-calcul-qui-en-découle) : la formule et les sept points de vigilance.
 
 ---
 
