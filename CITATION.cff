@@ -18,13 +18,28 @@ abstract: >-
   matériel, l'intensité carbone de l'électricité et les cadres de calcul
   normalisés.
 keywords:
-  - intelligence artificielle
-  - impact environnemental
-  - empreinte carbone
-  - analyse de cycle de vie
-  - consommation énergétique
-  - numérique responsable
-  - green AI
+  - artificial intelligence
+  - generative AI
   - LLM
+  - environmental impact
+  - carbon footprint
+  - life cycle assessment
+  - energy consumption
+  - water footprint
+  - abiotique resource depletion
+  - ADPe
+  - greenhouse gas emissions
+  - sustainable AI
+  - green AI
+  - frugal AI
+  - green software
+  - responsible AI
+  - carbon-aware computing
+  - sustainable computing
+  - numérique responsable
+  - ecoconception
+  - empreinte carbone
+  - consommation énergétique
 repository-code: https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia
 license: CC0-1.0
+identifier: eval_impact_ia

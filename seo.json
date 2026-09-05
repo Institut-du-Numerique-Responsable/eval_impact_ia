@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "eval_impact_ia",
+  "headline": "Calculateur d'impact environnemental de l'IA générative",
+  "description": "Base de ressources et d'outils open source pour calculer l'impact environnemental de l'IA : carbone (gCO₂e), énergie (kWh), eau (L) et épuisement des ressources abiotiques (ADPe). 79 publications scientifiques + 87 outils logiciels.",
+  "keywords": [
+    "artificial intelligence",
+    "generative AI",
+    "LLM",
+    "large language models",
+    "carbon footprint",
+    "CO2 emissions",
+    "energy consumption",
+    "water footprint",
+    "abiotic resource depletion",
+    "ADPe",
+    "life cycle assessment",
+    "LCA",
+    "environmental impact",
+    "sustainable AI",
+    "green AI",
+    "frugal AI",
+    "green software",
+    "responsible AI",
+    "carbon-aware computing",
+    "sustainable computing",
+    "CodeCarbon",
+    "EcoLogits",
+    "Scaphandre",
+    "perf-sentinel",
+    "Hugging Face",
+    "GitHub",
+    "GitLab",
+    "HAL",
+    "arXiv"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Institut du Numérique Responsable",
+    "url": "https://institutnr.org",
+    "description": "Organisation dédiée à la promotion d'un numérique responsable et durable."
+  },
+  "version": "1.0.0",
+  "datePublished": "2026-09-05",
+  "dateModified": "2026-09-05",
+  "license": "CC0-1.0",
+  "url": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia",
+  "codeRepository": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia",
+  "programmingLanguage": "Python",
+  "operatingSystem": "Cross-platform",
+  "applicationCategory": "Developer tool",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia"
+  },
+  "contributor": [
+    {
+      "@type": "Organization",
+      "name": "Institut du Numérique Responsable",
+      "url": "https://institutnr.org"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Organization",
+      "name": "Institut du Numérique Responsable",
+      "url": "https://institutnr.org"
+    }
+  ],
+  "inLanguage": ["fr", "en"],
+  "isAccessibleForFree": true,
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "Références documentaires",
+      "description": "79 publications HAL et arXiv sur la méthodologie ACV, l'énergie d'entraînement/inférence, l'infrastructure, le cadrage politique et la restitution pédagogique.",
+      "url": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia#a-r%C3%A9f%C3%A9rences-documentaires"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Ressources logicielles",
+      "description": "87 dépôts GitHub/GitLab/Hugging Face classés par rôle : estimation d'impact, mesure électrique, ACV matérielle, conversion carbone, normalisation, CI/CD, mesure côté service, communs.",
+      "url": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia#b-ressources-logicielles"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Méthodologie",
+      "description": "Synthèse de calcul pour 4 indicateurs (gCO₂e, kWh, L, gSbe) avec 7 points de vigilance.",
+      "url": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia#c-proposition-de-m%C3%A9thodologie"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Sources analysées",
+      "description": "Liste complète des sources balayées (GitLab, GitHub, HAL, arXiv) avec méthodologie de filtrage et de sélection.",
+      "url": "https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/blob/main/SOURCES.md"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "CodeCarbon",
+      "url": "https://github.com/mlco2/codecarbon"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "EcoLogits",
+      "url": "https://github.com/mlco2/ecologits"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Scaphandre",
+      "url": "https://github.com/hubblo-org/scaphandre"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "perf-sentinel",
+      "url": "https://github.com/robintra/perf-sentinel"
+    }
+  ]
+}

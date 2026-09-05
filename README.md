@@ -6,6 +6,18 @@
 [![Indicateurs CO2e kWh eau ADPe](https://img.shields.io/badge/indicateurs-gCO₂e_·_kWh_·_eau_·_ADPe-4c8c4a?style=flat-square)](#c-proposition-de-méthodologie)
 [![Dernière mise à jour](https://img.shields.io/github/last-commit/Institut-du-Numerique-Responsable/eval_impact_ia?style=flat-square&label=mise%20à%20jour&color=888888)](https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia/commits/main)
 
+> **TL;DR** : Ce dépôt rassemble **79 publications** (HAL/arXiv/revues) et **87 outils open source** pour calculer l'impact environnemental de l'IA (carbone, énergie, eau, ADPe). Méthodologie ACV complète pour les LLM, avec des outils comme CodeCarbon, EcoLogits, Scaphandre et perf-sentinel.
+
+## Pourquoi ce dépôt ?
+
+L'IA générative a un **impact environnemental mal mesuré** : entraînement, inférence, fabrication du matériel, refroidissement des datacenters. Ce projet apporte :
+
+- **La méthode** : une synthèse de calcul pour 4 indicateurs (gCO₂e, kWh, L, gSbe) issue de 79 publications scientifiques.
+- **Les outils** : 87 briques de code open source pour mesurer, estimer, normaliser.
+- **La transparence** : chaque référence et ressource est sourcée, datée, et classée par rôle dans le calculateur.
+
+---
+
 Construire un calculateur d'impact environnemental de l'IA demande deux choses :
 une méthode et des briques de code. Cette page rassemble les deux, pour quatre
 indicateurs : carbone (gCO₂e), énergie (kWh), eau (L), ressources abiotiques
