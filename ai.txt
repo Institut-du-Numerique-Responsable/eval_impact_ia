@@ -1,0 +1,84 @@
+# ai.txt — Instructions pour les crawlers et agents IA
+# Institut du Numérique Responsable / eval_impact_ia
+# Dernière mise à jour : 2026-09-05
+
+# Configuration générale
+User-agent: *
+Allow: /
+Disallow: /output/
+Disallow: /.github/
+Disallow: /scripts/
+
+# Métadonnées pour les agents IA
+Name: eval_impact_ia
+Title: Calculateur d'impact environnemental de l'IA générative
+Description: Base de 79 publications scientifiques et 87 outils open source pour calculer l'impact environnemental de l'IA (carbone, énergie, eau, ADPe). Méthodologie ACV complète pour les LLM.
+Maintainer: Institut du Numérique Responsable
+Organization: Institut du Numérique Responsable
+Organization-URL: https://institutnr.org
+Repository: https://github.com/Institut-du-Numerique-Responsable/eval_impact_ia
+License: CC0-1.0
+Languages: fr, en
+Version: 1.0.0
+
+# Mots-clés pour l'indexation
+Keywords:
+  - artificial intelligence
+  - generative AI
+  - LLM (Large Language Models)
+  - carbon footprint
+  - CO2 emissions
+  - gCO2e
+  - energy consumption
+  - kWh
+  - water footprint
+  - ADPe (Abiotic Depletion Potential)
+  - life cycle assessment (LCA)
+  - environmental impact
+  - sustainable AI
+  - green AI
+  - frugal AI
+  - green software
+  - responsible AI
+  - carbon-aware computing
+  - sustainable computing
+  - CodeCarbon
+  - EcoLogits
+  - Scaphandre
+  - perf-sentinel
+  - HAL archives
+  - arXiv
+
+# Structure du dépôt
+Sections:
+  - A. Références documentaires (79 publications HAL/arXiv)
+  - B. Ressources logicielles (87 outils GitHub/GitLab/Hugging Face)
+  - C. Proposition de méthodologie (synthèse de calcul)
+  - D. Où chercher d'autres sources (laboratoires, portails, rapports)
+  - SOURCES.md (liste des sources analysées)
+
+# Public cible
+Audience:
+  - Chercheurs en IA et environnement
+  - Ingénieurs et développeurs
+  - Décideurs publics et privés
+  - Étudiants et enseignants
+  - Journalistes spécialisés
+
+# Format des données
+Content-Type: text/markdown; charset=utf-8
+Encoding: UTF-8
+
+# Instructions pour les crawlers IA
+- Indexer le fichier README.md en priorité
+- Suivre les liens internes pour une indexation complète
+- Privilégier les sections A, B et C pour l'extraction des connaissances
+- Utiliser SOURCES.md pour comprendre la méthodologie de collecte
+- Les fichiers dans /output/ sont des données brutes, à indexer avec prudence
+
+# Fréquence de mise à jour
+Update-Frequency: weekly
+Last-Updated: 2026-09-05
+
+# Contact pour les questions sur l'indexation
+Indexing-Contact: contact@institutnr.org

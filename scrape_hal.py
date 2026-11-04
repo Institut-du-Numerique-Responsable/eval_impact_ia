@@ -31,6 +31,8 @@ from urllib.parse import quote
 
 import requests
 
+from scrape_cache import cached_request, clear_cache, get_cache_stats
+
 API = "https://api.archives-ouvertes.fr/search/"
 HEADERS = {"User-Agent": "eval-CO2-IA-inventory/1.0 (+recherche empreinte IA)"}
 
@@ -145,12 +147,23 @@ def evaluer(d: dict) -> tuple[int, list[str], bool]:
     return score, axes, ia
 
 
-def chercher(query: str, rows: int, from_year: int, delay: float) -> list[dict]:
+def chercher(query: str, rows: int, from_year: int, delay: float, use_cache: bool = True) -> list[dict]:
     q = f"({query})"
     params = (f"q={quote(q)}&fl={FIELDS}&rows={rows}&wt=json"
               f"&sort=producedDateY_i%20desc")
     if from_year:
         params += f"&fq=producedDateY_i:[{from_year}%20TO%20*]"
+    
+    # Générer un hash pour la requête
+    query_hash = cached_request.generate_hash(query, rows, from_year)
+    
+    # Vérifier si la requête est en cache
+    if use_cache:
+        cached = cached_request.get_cached("hal", query_hash)
+        if cached is not None:
+            print(f"  ✓ Cache trouvé pour la requête: {query[:50]}...", file=sys.stderr)
+            return cached
+    
     try:
         r = requests.get(f"{API}?{params}", headers=HEADERS, timeout=60)
     except requests.RequestException as exc:
@@ -161,13 +174,20 @@ def chercher(query: str, rows: int, from_year: int, delay: float) -> list[dict]:
     if r.status_code != 200:
         print(f"  ! {query[:50]}… : HTTP {r.status_code}", file=sys.stderr)
         return []
-    return r.json().get("response", {}).get("docs", [])
+    
+    result = r.json().get("response", {}).get("docs", [])
+    
+    # Stocker en cache
+    if use_cache and result:
+        cached_request.cache_response("hal", query_hash, result)
+    
+    return result
 
 
-def collecter(queries, rows, from_year, delay, min_score, ia_only) -> list[Publi]:
+def collecter(queries, rows, from_year, delay, min_score, ia_only, use_cache: bool = True) -> list[Publi]:
     trouves: dict[str, Publi] = {}
     for q in queries:
-        docs = chercher(q, rows, from_year, delay)
+        docs = chercher(q, rows, from_year, delay, use_cache=use_cache)
         print(f"# {len(docs):>4} résultats — {q[:70]}…", file=sys.stderr)
         for d in docs:
             score, axes, ia = evaluer(d)
@@ -234,11 +254,23 @@ def main() -> int:
     ap.add_argument("--min-score", type=int, default=3)
     ap.add_argument("--ia-only", action="store_true")
     ap.add_argument("--outdir", type=Path, default=Path("output"))
+    ap.add_argument("--use-cache", action="store_true", default=True,
+                    help="Utiliser le cache pour éviter de refaire les mêmes requêtes (défaut: oui)")
+    ap.add_argument("--clear-cache", action="store_true",
+                    help="Effacer le cache avant de commencer")
     args = ap.parse_args()
 
+    if args.clear_cache:
+        count = clear_cache("hal")
+        print(f"Cache effacé: {count} entrées supprimées", file=sys.stderr)
+
     publis = collecter(args.queries, args.rows, args.from_year, args.delay,
-                       args.min_score, args.ia_only)
+                       args.min_score, args.ia_only, use_cache=args.use_cache)
     ecrire(publis, args.outdir)
+    
+    if args.use_cache:
+        stats = get_cache_stats()
+        print(f"Cache HAL: {stats.get('by_source', {}).get('hal', 0)} requêtes en cache", file=sys.stderr)
     return 0
 
 
